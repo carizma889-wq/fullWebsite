@@ -13,12 +13,10 @@ function Header() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul style={{margin:'0 auto',display:'flex',justifyContent:'center',alignItems:'center',listStyle:'none',gap:'50px',paddingTop:"10px"}} className="navbar-nav me-auto mb-2 mb-lg-0">
         {NAV_LINKS.map((data)=>{
-         if (data==='Sign Up') {
-         return <Link key={data} to={'/'} style={{border:'none',textDecoration:'none'}}>
+         if (data) {
+         return <Link key={data} to={data==="Sign Up"?"/":`/${data}`} style={{border:'none',textDecoration:'none'}}>
             <li style={{letterSpacing:'0',color:"black",border:'none',textDecoration:'none'}} key={data}>{data}</li>
           </Link>
-         }else{
-         return  <li style={{cursor:'pointer',color:"black"}} key={data}>{data}</li>
          }
         })}
         
