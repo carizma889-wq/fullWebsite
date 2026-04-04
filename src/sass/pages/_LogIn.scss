@@ -1,0 +1,85 @@
+@use '../utils/variable'as *;
+@use '../utils/mixin'as *;
+.mainLogIn{
+    margin:100px 0;
+    display:flex;
+    align-items:center;
+    height: 100vh;
+    .img{
+        img{
+            height:701px;
+            // width: 805px;
+        }
+    }
+    .logInAccount{
+        display: flex;
+        flex-direction: column;
+
+        margin: 0 auto;
+        p{
+            font-size: 15px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            #btn{
+                @include btnGlobal($primary_color,0px 48px,white);
+            }
+            #forget{
+                @include btnGlobal(white,10px 0,$primary_color);
+                border: 0;
+                box-shadow: none;
+                
+            }
+        }
+    }
+}
+
+
+
+
+@media (max-width: 991.98px) {
+  .mainSignUp{
+     width: 100%; 
+    max-width: 100%;
+    margin:100px 0;
+    display:flex;
+    align-items:center;
+    height: 100vh;
+    .img{
+        display: none;
+       
+    }
+ }
+}
+
+@media (max-width: 767.98px) {
+  .mainSignUp{
+        max-width: 100%;
+ width: 100%;
+    margin:100px 0;
+    display:flex;
+    align-items:center;
+    height: 100vh;
+    .img{
+        display: none;
+       
+    }
+ }
+}
+
+@media (max-width: 575.98px) {
+ .mainSignUp{
+         width: 100%; 
+  max-width: 400px;
+    margin:100px 0;
+    display:flex;
+    align-items:center;
+    height: 100vh;
+    .img{
+        display: none;
+       
+    }
+ }
+}

@@ -1,0 +1,17 @@
+@use './layout/header';
+@use './pages/SignUp';
+@use './pages/LogIn';
+@use './layout/footer';
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+.app{
+    height: 100vh;
+}
+

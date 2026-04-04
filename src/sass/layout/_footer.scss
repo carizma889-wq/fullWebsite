@@ -1,0 +1,72 @@
+.footer_content{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: black;
+    color: #FAFAFA;
+    position: relative;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+  font-weight: 300; 
+    top: 30px;
+}
+.footer_content ul{
+    list-style: none;
+    padding: 0;
+}
+
+.footer_content ul li{
+    padding: 5px 0px;
+}
+.Support ul li{
+    width: 170px;
+}
+
+
+
+
+
+@media (max-width: 1199.98px) {
+.footer_content{
+    .Exclusive{
+        font-size: 10px;
+    }
+    .Support{
+  font-size: 10px;
+  width: 100%;
+  max-width: 100%;
+    }
+    .Account{
+  font-size: 10px;
+   width: 100%;
+  max-width: 100%;
+    }
+    .QuickLink{
+  font-size: 10px;
+   width: 100%;
+  max-width: 100%;
+    }
+    .DownloadApp{
+          font-size: 10px;
+           width: 100%;
+  max-width: 100%;
+    }
+}
+}
+
+@media (max-width: 991.98px) {
+  .top_header  {
+    display: block;
+ }
+ .top_header .dropdown{
+    display: none;
+ }
+}
+
+@media (max-width: 767.98px) {
+ 
+}
+
+@media (max-width: 575.98px) {
+
+}

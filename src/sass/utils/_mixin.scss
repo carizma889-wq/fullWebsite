@@ -1,0 +1,5 @@
+@mixin btnGlobal($bcColor,$padding,$color){
+    padding: $padding;
+    background-color: $bcColor;
+    color: $color;
+}

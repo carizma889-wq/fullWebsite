@@ -1,0 +1,291 @@
+@charset "UTF-8";
+.top_header {
+  background-color: black;
+  height: 48px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.top_header .details {
+  font-size: 13px;
+  padding-right: 5px;
+  padding-top: 12px;
+}
+
+.top_header p:last-of-type {
+  font-size: 13px;
+  margin-right: 5px;
+  padding-top: 12px;
+  text-decoration: underline;
+}
+
+.top_header .dropdown {
+  position: absolute;
+  right: 50px;
+  border: none !important;
+  background-color: none !important;
+  columns: white !important;
+}
+
+.dropdown .btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* TextField يمين أو تحت حسب الشاشة */
+@media (max-width: 768px) {
+  .navbar .navbar-collapse {
+    flex-direction: column; /* القائمة + البحث تحت بعض */
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+@media (max-width: 1199.98px) {
+  .top_header {
+    display: none;
+  }
+}
+@media (max-width: 991.98px) {
+  .top_header {
+    display: block;
+  }
+  .top_header .dropdown {
+    display: none;
+  }
+}
+.mainSignUp {
+  margin: 100px 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.mainSignUp .img img {
+  height: 701px;
+}
+.mainSignUp .createAccount {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.mainSignUp .createAccount p {
+  font-size: 15px;
+}
+.mainSignUp .createAccount form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.mainSignUp .createAccount form #btn {
+  padding: 10px 0;
+  background-color: #DB4444;
+  color: white;
+}
+.mainSignUp .createAccount form #btnGoogle {
+  padding: 10px 0;
+  background-color: white;
+  color: black;
+}
+.mainSignUp .createAccount form #btnGoogle img {
+  margin-right: 5px;
+}
+.mainSignUp .createAccount form p {
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: rgba(0, 0, 0, 0.6980392157);
+}
+.mainSignUp .createAccount form p a {
+  margin-left: 5px;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.6980392157);
+}
+
+@media (max-width: 991.98px) {
+  .mainSignUp {
+    width: 100%;
+    max-width: 100%;
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .mainSignUp .img {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .mainSignUp {
+    max-width: 100%;
+    width: 100%;
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .mainSignUp .img {
+    display: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .mainSignUp {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .mainSignUp .img {
+    display: none;
+  }
+}
+.mainLogIn {
+  margin: 100px 0;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.mainLogIn .img img {
+  height: 701px;
+}
+.mainLogIn .logInAccount {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.mainLogIn .logInAccount p {
+  font-size: 15px;
+}
+.mainLogIn .logInAccount form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.mainLogIn .logInAccount form #btn {
+  padding: 0px 48px;
+  background-color: #DB4444;
+  color: white;
+}
+.mainLogIn .logInAccount form #forget {
+  padding: 10px 0;
+  background-color: white;
+  color: #DB4444;
+  border: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 991.98px) {
+  .mainSignUp {
+    width: 100%;
+    max-width: 100%;
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .mainSignUp .img {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .mainSignUp {
+    max-width: 100%;
+    width: 100%;
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .mainSignUp .img {
+    display: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .mainSignUp {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .mainSignUp .img {
+    display: none;
+  }
+}
+.footer_content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: black;
+  color: #FAFAFA;
+  position: relative;
+  flex-wrap: wrap;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  top: 30px;
+}
+
+.footer_content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer_content ul li {
+  padding: 5px 0px;
+}
+
+.Support ul li {
+  width: 170px;
+}
+
+@media (max-width: 1199.98px) {
+  .footer_content .Exclusive {
+    font-size: 10px;
+  }
+  .footer_content .Support {
+    font-size: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .footer_content .Account {
+    font-size: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .footer_content .QuickLink {
+    font-size: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .footer_content .DownloadApp {
+    font-size: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 991.98px) {
+  .top_header {
+    display: block;
+  }
+  .top_header .dropdown {
+    display: none;
+  }
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.app {
+  height: 100vh;
+}
+
+/*# sourceMappingURL=App.css.map */

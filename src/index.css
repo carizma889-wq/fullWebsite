@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*
+/* sm وأكبر
+@media (min-width: 576px) {
+    .mainSignUp img {
+    visibility: none;
+  }
+}
+/* md وأكبر */
+/* @media (min-width: 768px) {
+  .example {
+    background-color: lightgreen;
+  }
+} 
+
+@media (min-width: 992px) {
+  .example {
+    background-color: lightcoral;
+  }
+}
+ xl وأكبر 
+@media (min-width: 1200px) {
+  .example {
+    background-color: lightpink;
+  }
+}
+ xxl وأكبر 
+@media (min-width: 1400px) {
+  .example {
+    background-color: lightgoldenrodyellow;
+  }
+} 
+
+*/

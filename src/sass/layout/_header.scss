@@ -1,0 +1,68 @@
+.top_header{
+background-color: black;
+height: 48px;
+color: white;
+display: flex;    
+justify-content: center;
+align-items: center;
+text-align: center;
+width: 100%;
+position: relative;
+}
+.top_header .details{
+    font-size: 13px;
+    padding-right: 5px;
+    padding-top: 12px;
+}
+.top_header p:last-of-type{
+font-size: 13px;
+    margin-right: 5px;
+    padding-top: 12px;
+text-decoration: underline;
+}
+.top_header .dropdown{
+    position: absolute;
+    right: 50px;
+    border: none !important;
+    background-color: none !important;
+    columns: white !important;
+    
+}
+.dropdown .btn:focus {
+  outline: none;      
+  box-shadow: none;   
+}
+
+
+/* TextField يمين أو تحت حسب الشاشة */
+@media (max-width: 768px) {
+  .navbar .navbar-collapse {
+    flex-direction: column; /* القائمة + البحث تحت بعض */
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+
+@media (max-width: 1199.98px) {
+ .top_header  {
+    display: none;
+ }
+}
+
+@media (max-width: 991.98px) {
+  .top_header  {
+    display: block;
+ }
+ .top_header .dropdown{
+    display: none;
+ }
+}
+
+@media (max-width: 767.98px) {
+ 
+}
+
+@media (max-width: 575.98px) {
+
+}

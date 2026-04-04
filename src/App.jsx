@@ -1,0 +1,37 @@
+import { Route ,Routes } from "react-router-dom"
+import HomePage from "./pages/HomePage"
+import Layout from "./pages/layout"
+import About from "./pages/About"
+import Cart from "./pages/Cart"
+import Account from './pages/Account';
+import CheckOut from "./pages/CheckOut"
+import Contact from "./pages/Contact"
+import LogIn from "./pages/LogIn"
+import NotFound from "./pages/NotFound"
+import ProductDetails from "./pages/ProductDetails"
+import SignUp from "./pages/SignUp"
+import Wishlist from "./pages/Wishlist"
+import './App.css'
+function App() {
+  return (
+    <>
+    <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<SignUp/>}/>   
+          <Route path="/LogIn" element={<LogIn/>}/>   
+          <Route path="/Home" element={<HomePage />} />  
+          <Route path="/About" element={<About/>}/>   
+          <Route path="/Cart" element={<Cart/>}/>   
+          <Route path="/Account" element={<Account/>}/>   
+          <Route path="/CheckOut" element={<CheckOut/>}/>   
+          <Route path="/Contact" element={<Contact/>}/>   
+          <Route path="*" element={<NotFound/>}/>   
+          <Route path="/ProductDetails" element={<ProductDetails/>}/>   
+          <Route path="/Wishlist" element={<Wishlist/>}/>   
+        </Route>
+      </Routes>
+    </>
+  )
+}
+
+export default App
