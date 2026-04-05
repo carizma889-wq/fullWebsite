@@ -566,6 +566,43 @@
     padding-left: 0;
   }
 }
+.contentNotFound {
+  margin: 100px 0;
+}
+.contentNotFound .Link {
+  margin-left: 35px;
+}
+.contentNotFound .Link .LinkHome {
+  text-decoration: none;
+  color: rgba(33, 37, 41, 0.7058823529);
+  margin-right: 10px;
+}
+.contentNotFound .Link .LinkNotFound {
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+.contentNotFound .content {
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.contentNotFound .content h1 {
+  color: black;
+  font-size: 110px;
+}
+.contentNotFound .content p {
+  font-size: 16px;
+}
+.contentNotFound .content .btns {
+  padding: 16px 48px;
+  background-color: #DB4444;
+  color: white;
+}
+
 body {
   padding: 0;
   margin: 0;

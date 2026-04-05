@@ -19,8 +19,10 @@ const Layout = () => {
 </div>
   {/*  */}
     </div >
-        <div className="content">
-          <Outlet />
+        <div className="content" style={{display:'flex',flexDirection:'column',minHeight:'100vh'}}>
+       <div style={{flex:'1'}}>
+           <Outlet />
+       </div>
         </div>
         {/*  */}
         <div className="footer">

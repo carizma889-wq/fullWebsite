@@ -1,0 +1,36 @@
+@use '../utils/mixin' as *;
+@use '../utils/variable' as *;
+.contentNotFound{
+    margin: 100px 0;
+     .Link{
+        margin-left: 35px;
+        .LinkHome{
+            text-decoration:none;
+            color:#212529b4;
+            margin-right:10px;
+        }
+        .LinkNotFound{
+            text-decoration:none;
+            color:black;
+            margin-right:10px;
+        }
+    }
+    .content{
+        margin: 100px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        h1{
+            color: black;
+            font-size: 110px;
+        }
+        p{
+            font-size: 16px;
+        }
+        .btns{
+                @include btnGlobal($primary_color,16px 48px,white);
+        }
+    }
+}
