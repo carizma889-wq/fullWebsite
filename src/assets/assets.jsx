@@ -35,6 +35,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import car from '/img/car.png'
 import headPhone from '/img/headPhone.png';
 import Services from '/img/Services.png'
+// 
+import call from '/img/IconCall.png';
+import email from '/img/IconEmail.png';
 
 export const NAV_LINKS =[ 'Home','Content','About','Sign Up']
 
@@ -114,4 +117,8 @@ export const propertyAbout=[
     {id:uuid(), img:car,title:'FREE AND FAST DELIVERY',details:'Free delivery for all orders over $140'},
     {id:uuid(),img:headPhone,title:'24/7 CUSTOMER SERVICE',details:'Friendly 24/7 customer support'},
     {id:uuid(),img:Services,title:'MONEY BACK GUARANTEE',details:'We reurn money within 30 days'}
+]
+export const DataPageContact=[
+{id:uuid(),img:call,titleImg:'Call To Us',details:['We are available 24/7, 7 days a week.','Phone: +8801611112222']},
+{id:uuid(),img:email,titleImg:'Write To US',details:['Fill out our form and we will contact you within 24 hours.','Emails: customer@exclusive.com','Emails: support@exclusive.com']}
 ]

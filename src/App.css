@@ -431,6 +431,141 @@
     display: block;
   }
 }
+.mainContact {
+  margin: 100px 0;
+}
+.mainContact .Link {
+  margin-left: 25px;
+}
+.mainContact .Link .LinkHome {
+  text-decoration: none;
+  color: rgba(33, 37, 41, 0.7058823529);
+  margin-right: 10px;
+}
+.mainContact .Link .LinkContact {
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+.mainContact .section {
+  margin: 100px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.mainContact .section .address .item:first-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4392156863);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+.mainContact .section .address .item .title {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.mainContact .section .address .item .title .img {
+  background-color: #DB4444;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainContact .section .address .item p {
+  font-size: 14px;
+  gap: 10px;
+}
+.mainContact .section .messageMe {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 40px;
+  align-items: flex-end;
+}
+.mainContact .section .messageMe .inputsContact {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.mainContact .section .messageMe .textarea {
+  resize: none;
+}
+.mainContact .section .messageMe .btns {
+  padding: 16px 48px;
+  background-color: #DB4444;
+  color: white;
+  border: none;
+}
+
+@media (max-width: 992px) {
+  .mainContact .section {
+    flex-wrap: wrap;
+  }
+  .mainContact .section .address {
+    margin: 0 auto;
+  }
+  .mainContact .section .messageMe {
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .mainContact .section {
+    flex-wrap: wrap;
+  }
+  .mainContact .section .address {
+    margin: 0 auto;
+  }
+  .mainContact .section .messageMe {
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 576px) {
+  .mainContact .section {
+    flex-wrap: wrap;
+  }
+  .mainContact .section .address {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  .mainContact .section {
+    flex-wrap: wrap;
+  }
+  .mainContact .section .address {
+    margin: 0 auto;
+  }
+  .mainContact .section .messageMe .inputsContact {
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+  .mainContact .section .messageMe .inputsContact #filled-basic {
+    width: 300px;
+  }
+  .mainContact .section .messageMe {
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+@media (max-width: 320px) {
+  .mainContact .section {
+    flex-wrap: wrap;
+  }
+  .mainContact .section .messageMe {
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+    padding-left: 0;
+  }
+}
 body {
   padding: 0;
   margin: 0;
