@@ -1,0 +1,184 @@
+.mainAbout{
+    margin: 100px 0;
+    .Link{
+        margin-left: 35px;
+        .LinkHome{
+            text-decoration:none;
+            color:#212529b4;
+            margin-right:10px;
+        }
+        .LinkAbout{
+            text-decoration:none;
+            color:black;
+            margin-right:10px;
+        }
+    }
+
+    .contentAbout{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       position: relative;
+            }
+            .DetailsAbout{
+                width: 530px;
+                margin-left:40px ;
+            }
+        .first-detailsAbout{
+            margin: 25px 0;
+        }
+        .lastDetails{
+
+        }
+        .imgAbout{
+            position: relative;
+        right: 0px;
+            img{
+               width: 705px;
+            }
+        }
+    }
+
+    .propertyAbout{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0px;
+        grid-area: 50px;
+        
+        .item{
+            width: 270px;
+            height: 230px;
+            border: 1px solid #000000af;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            .img{
+                background-color: black;
+                border-radius: 50%;
+                width: fit-content;
+                box-shadow: 0px 0px 0px 5px #212529b4 ;
+                justify-content: center;
+                margin: 0 0 25px 0px;
+                img{
+                    width: 40px;
+                    padding: 5px;
+                    color: white;
+                }
+            }
+            h4{
+                color: black;
+            }
+            p{
+                font-size: 10px;
+                color: black;
+            }
+        }
+    }
+
+    .propertyAboutShow{
+        flex-wrap: wrap;
+        margin: 100px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // margin-top: 30px;
+        gap: 10px;
+        // margin-left: 50px;
+        .img{
+            background-color: #F5F5F5;
+            width: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        h2{
+            color: black;
+        }
+        .icon{
+            margin: 0 10px;
+        }
+
+    }
+    .Property{
+        flex-wrap: wrap;
+        margin: 100px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+        margin-top: 30px;
+        margin-left: 50px;
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+
+
+    // media query
+@media (min-width: 320px) {  
+    .contentAbout{
+        .DetailsAbout{
+            margin: 0 auto;
+            max-width: 100%;
+            padding: 10px;
+        }
+        .imgAbout{
+            display: none;
+        }
+    } 
+// 
+
+  .propertyAbout{
+        .item{
+            margin: 10px auto;
+        }
+    }
+    // 
+    .propertyAboutShow{
+        // margin: 30px auto;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        // width: 100%;
+        .img{
+            margin: 30px auto;
+        }
+    }
+    // 
+    .Property{
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 480px) { 
+        .contentAbout{
+        .DetailsAbout{
+            margin: 0 auto;
+            max-width: 100%;
+            padding: 10px;
+        }
+        .imgAbout{
+            display: none;
+        }
+    } 
+}
+
+
+
+
+@media (min-width: 992px) {
+    .contentAbout{
+        .imgAbout{
+            display: block;
+        }
+    }
+ }

@@ -1,10 +1,12 @@
-import { NAV_LINKS } from "../assets/assets"
+import { NAV_LINKS } from "../assets/assets.jsx"
 import { Link } from "react-router-dom";
 import TextField from '@mui/material/TextField';
 function Header() {
   return (
     <>
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{display:'flex',justifyContent:'space-between',alignItems:'center',margin:'0 20px'}}>
+    <div style={{width:'100%',borderBottom:'1px solid black'}}>
+      
+    <nav className="navbar navbar-expand-lg " style={{display:'flex',justifyContent:'space-between',alignItems:'center',margin:'0 20px'}}>
   <div className="container-fluid">
     <a className="navbar-brand" href="#"><h1>Exclusive</h1></a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +27,7 @@ function Header() {
     </div>
   </div>
 </nav>
+    </div>
     </>
 )
 }

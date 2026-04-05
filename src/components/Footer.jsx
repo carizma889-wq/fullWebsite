@@ -1,4 +1,4 @@
-import {FooterData} from '../assets/assets.js'
+import {FooterData} from '../assets/assets.jsx'
 
 function Footer() {
   return (

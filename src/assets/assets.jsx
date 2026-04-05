@@ -21,6 +21,21 @@ import product18 from '/img/products18.png'
 import product19 from '/img/products19.png'
 import product20 from '/img/products20.png'
 import product21 from '/img/products21.png'
+import StorefrontIcon from '/img/iconMarket.png';
+import ShoppingBagIcon from '/img/paper-bag.png';
+import MonetizationOnIcon from '/img/coin.png';
+import money from '/img/money.png'
+import man1 from '/img/man1.png'
+import woman2 from '/img/woman2.png'
+import man2 from '/img/man2.png'
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// 
+import car from '/img/car.png'
+import headPhone from '/img/headPhone.png';
+import Services from '/img/Services.png'
+
 export const NAV_LINKS =[ 'Home','Content','About','Sign Up']
 
 export const SIDEBAR_LINKS=[
@@ -84,3 +99,19 @@ export const FooterData={
     DownloadApp:[{name:'Download App',details:'Save $3 with App New User Only'}]
 }
 
+export const Property=[
+    {id:uuid(),img:StorefrontIcon,number:'10.5k ',details:'Sallers active our site'},
+    {id:uuid(),img:MonetizationOnIcon,number:'33K',details:'Mopnthly Produduct Sale'},
+    {id:uuid(),img:ShoppingBagIcon,number:'45.5K ',details:'Customer active in our site'},
+    {id:uuid(),img:money,number:'25Kk ',details:'Anual gross sale in our site'},
+]
+export const detailsPeopleAbout=[
+    {id:uuid(),img:man1,name:'Tom Cruise',details:'Founder & Chairman',iconsSocial:[<TwitterIcon/>,<InstagramIcon/>,<LinkedInIcon/>]},
+    {id:uuid(),img:woman2,name:'Emma Watson',details:'Managing Director',iconsSocial:[<TwitterIcon/>,<InstagramIcon/>,<LinkedInIcon/>]},
+    {id:uuid(),img:man2,name:'Will Smith',details:'Product Designer',iconsSocial:[<TwitterIcon/>,<InstagramIcon/>,<LinkedInIcon/>]},
+]
+export const propertyAbout=[
+    {id:uuid(), img:car,title:'FREE AND FAST DELIVERY',details:'Free delivery for all orders over $140'},
+    {id:uuid(),img:headPhone,title:'24/7 CUSTOMER SERVICE',details:'Friendly 24/7 customer support'},
+    {id:uuid(),img:Services,title:'MONEY BACK GUARANTEE',details:'We reurn money within 30 days'}
+]
