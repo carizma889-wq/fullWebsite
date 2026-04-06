@@ -10,7 +10,7 @@ function LogIn() {
 
   return (
       <div>
-      <Header/>
+      <Header isSignUpOrLogIN={false}/>
       {/*  */}
       <div className='mainLogIn'>
         <div className="img"><img style={{}} src={'/img/shopping.png'} alt="" /></div>
@@ -39,7 +39,6 @@ function LogIn() {
                   <Button id="btn"  variant="contained">Log In</Button>
                   <Button id="forget" variant="contained"> Forget Password?</Button>
                 </div>
-               
           </form>
         </div>
       </div>

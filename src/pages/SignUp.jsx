@@ -10,7 +10,7 @@ function SignUp() {
 
   return (
     <div>
-      <Header/>
+      <Header isSignUpOrLogIN={false}/>
       {/*  */}
       <div className='mainSignUp'>
         <div className="img"><img style={{}} src={'/img/shopping.png'} alt="" /></div>
@@ -41,8 +41,7 @@ function SignUp() {
                   <Button id="btnGoogle" variant="contained"><img src={'/img/iconGoogle.png'} alt="" /> Sign up with Google</Button>
                   
                   <p>Already have account?<Link to={'/LogIn'}><a href="#">log in</a>  </Link></p>
-                  
-
+                
           </form>
         </div>
       </div>
