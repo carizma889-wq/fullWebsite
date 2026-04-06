@@ -603,6 +603,65 @@
   color: white;
 }
 
+.heroSection {
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.heroSection .sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  list-style: none;
+}
+.heroSection .sidebar .sidebarContent {
+  cursor: pointer;
+  display: flex;
+  width: 180px;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+.heroSection .sidebar .sidebarContent span .arrowRight {
+  font-size: 15px;
+}
+
+.swiper-pagination-bullet {
+  background: gray; /* النقط العادية */
+  opacity: 1;
+  padding: 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #DB4444;
+}
+
+.carousel {
+  flex: 1;
+}
+.carousel .mySwiper {
+  width: 892px;
+  height: 344px;
+}
+
+.text {
+  position: relative;
+}
+
+.text::after {
+  content: "";
+  background-color: white;
+  width: 100%;
+  height: 1px;
+  top: 10px;
+  z-index: -111111111111;
+}
+
 body {
   padding: 0;
   margin: 0;
