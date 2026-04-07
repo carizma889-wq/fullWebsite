@@ -6,12 +6,14 @@
 @use './pages//Contact';
 @use './pages/NotFound.scss';
 @use './layout/HeroSection';
+@use './layout/FlashSalesSection';
 body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 .app{
     height: 100vh;

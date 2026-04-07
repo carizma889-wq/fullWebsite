@@ -662,12 +662,222 @@
   z-index: -111111111111;
 }
 
+.FlashSalesSection {
+  margin: 100px 0;
+}
+.FlashSalesSection .sectionName {
+  margin-left: 141px;
+}
+.FlashSalesSection .sectionName .title {
+  margin-left: 35px;
+  position: relative;
+  color: #DB4444;
+}
+.FlashSalesSection .sectionName .title::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  border-radius: 5px;
+  bottom: -10px;
+  left: -35px;
+  background-color: #DB4444;
+  color: #DB4444;
+}
+.FlashSalesSection .sectionName .details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.FlashSalesSection .sectionName .details .NameAndNumbers {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.FlashSalesSection .sectionName .details .NameAndNumbers .numbers {
+  margin-left: 87px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.FlashSalesSection .sectionName .details .NameAndNumbers .numbers .days, .FlashSalesSection .sectionName .details .NameAndNumbers .numbers .Hours, .FlashSalesSection .sectionName .details .NameAndNumbers .numbers .Minutes, .FlashSalesSection .sectionName .details .NameAndNumbers .numbers .Seconds {
+  display: flex;
+  font-size: 18px;
+  color: #000000;
+  flex-direction: column;
+}
+.FlashSalesSection .sectionName .details .NameAndNumbers .numbers .days .number, .FlashSalesSection .sectionName .details .NameAndNumbers .numbers .Hours .number, .FlashSalesSection .sectionName .details .NameAndNumbers .numbers .Minutes .number, .FlashSalesSection .sectionName .details .NameAndNumbers .numbers .Seconds .number {
+  font-size: 30px;
+}
+.FlashSalesSection .sectionName .details .arrows {
+  margin-right: 90px;
+  display: flex;
+  gap: 30px;
+}
+.FlashSalesSection .sectionName .details .arrows .arrow {
+  font-size: 46px;
+  cursor: pointer;
+}
+
+.myProducts {
+  width: 100%;
+  height: 100%;
+  margin-left: 140px;
+}
+.myProducts .mySwiper {
+  margin-left: 140px;
+}
+.myProducts .item .BoxImg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #F5F5F5;
+  width: 100%;
+  height: 250px;
+}
+.myProducts .item .BoxImg .img {
+  text-decoration: line-through;
+  pointer-events: none;
+}
+.myProducts .item .BoxImg .btnHide {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 41px;
+  width: 100%;
+  background: black;
+  color: white;
+  border: none;
+  z-index: 10;
+  cursor: pointer;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.myProducts .item .BoxImg:hover .btnHide {
+  transform: translateY(0);
+}
+.myProducts .item .details p {
+  color: black;
+  margin-top: 10px;
+}
+.myProducts .item .details .price span:last-child {
+  margin-left: 10px;
+  text-decoration: line-through;
+  color: #333;
+}
+.myProducts .item .details .price .stars {
+  display: flex;
+  gap: 3px;
+}
+
+/* أصغر الشاشات حتى 360px */
+@media (max-width: 360px) {
+  .FlashSalesSection .sectionName {
+    margin-left: 20px;
+  }
+  .myProducts {
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+  }
+  .myProducts .mySwiper {
+    margin-left: 140px;
+  }
+}
+/* من 361px إلى 767px */
+@media (min-width: 361px) and (max-width: 767px) {
+  .FlashSalesSection .sectionName {
+    margin-left: 50px;
+  }
+  .myProducts {
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+  }
+  .myProducts .mySwiper {
+    margin-left: 140px;
+  }
+}
+/* من 768px إلى 819px */
+@media (min-width: 768px) and (max-width: 819px) {
+  .FlashSalesSection .sectionName {
+    margin-left: 140px;
+  }
+}
+/* من 820px إلى 899px */
+@media (min-width: 820px) and (max-width: 899px) {
+  .FlashSalesSection .sectionName {
+    margin-left: 170px;
+  }
+}
+/* من 900px إلى 949px */
+@media (min-width: 900px) and (max-width: 949px) {
+  .FlashSalesSection .sectionName {
+    margin-left: 70px;
+  }
+  .myProducts {
+    width: 100%;
+    height: 100%;
+    margin-left: 90px;
+  }
+  .myProducts .mySwiper {
+    margin-left: 140px;
+  }
+}
+/* من 950px إلى 1280px */
+@media (min-width: 950px) and (max-width: 1280px) {
+  .FlashSalesSection .sectionName {
+    margin-left: 80px;
+  }
+  .myProducts {
+    width: 100%;
+    height: 100%;
+    margin-left: 90px;
+  }
+  .myProducts .mySwiper {
+    margin-left: 140px;
+  }
+}
+/* من 1281px إلى 1599px */
+@media (min-width: 1281px) and (max-width: 1599px) {
+  .FlashSalesSection .sectionName {
+    margin-left: 150px;
+  }
+  .myProducts {
+    width: 100%;
+    height: 100%;
+    margin-left: 190px;
+  }
+  .myProducts .mySwiper {
+    margin-left: 140px;
+  }
+}
+/* من 1600px فأكثر */
+@media (min-width: 1600px) {
+  .FlashSalesSection .sectionName {
+    margin-left: 250px;
+  }
+  .myProducts {
+    width: 100%;
+    height: 100%;
+    margin-left: 260px;
+  }
+  .myProducts .mySwiper {
+    margin-left: 140px;
+  }
+}
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   height: 100vh;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 .app {

@@ -54,9 +54,9 @@ export const SIDEBAR_LINKS=[
 ]
 
 export const PRODUCTS_CAROUSEL=[
-    {id:uuid(),details:'HAVIT HV-G92 Gamepad',salaryOffer:'120', salary:'160',startNumberYellow:5,startNumberempty:'0',evaluation:'88',numberStarmaybe:'0',img:product1},
-    {id:uuid(),details:'AK-900 Wired Keyboard',salaryOffer:'960', salary:'1160',startNumberYellow:4,startNumberempty:1,evaluation:'88',numberStarmaybe:'0',img:product2},
-    {id:uuid(),details:'IPS LCD Gaming Monitor',salaryOffer:'370', salary:'400',startNumberYellow:5,startNumberempty:0,evaluation:'88',numberStarmaybe:'0',img:product3},
+    {id:uuid(),details:'HAVIT HV-G92 Gamepad',salaryOffer:'120', salary:'160',startNumberYellow:5,startNumberempty:0,evaluation:'88',numberStarmaybe:0,img:product1},
+    {id:uuid(),details:'AK-900 Wired Keyboard',salaryOffer:'960', salary:'1160',startNumberYellow:4,startNumberempty:1,evaluation:'88',numberStarmaybe:0,img:product2},
+    {id:uuid(),details:'IPS LCD Gaming Monitor',salaryOffer:'370', salary:'400',startNumberYellow:5,startNumberempty:0,evaluation:'88',numberStarmaybe:0,img:product3},
     {id:uuid(),details:'S-Series Comfort Chair ',salaryOffer:'375', salary:'$400',startNumberYellow:4,startNumberempty:0,evaluation:'88',numberStarmaybe:1,img:product4},
     {id:uuid(),details:'S-Series Comfort Chair ',salaryOffer:'375', salary:'$400',startNumberYellow:4,startNumberempty:0,evaluation:'88',numberStarmaybe:1,img:product4},
 ]
