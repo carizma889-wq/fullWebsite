@@ -720,6 +720,16 @@
   font-size: 46px;
   cursor: pointer;
 }
+.FlashSalesSection .btns {
+  display: flex;
+  justify-content: center;
+}
+.FlashSalesSection .btns .btn {
+  margin-top: 40px;
+  padding: 16px 48px;
+  background-color: #DB4444;
+  color: white;
+}
 
 .myProducts {
   width: 100%;

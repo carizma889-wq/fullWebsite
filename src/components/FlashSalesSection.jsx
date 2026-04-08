@@ -2,9 +2,10 @@ import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutl
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import Products from './Products';
 import { PRODUCTS_CAROUSEL } from '../assets/assets';
+import { Link } from 'react-router-dom';
 function FlashSalesSection() {
   return (
-    <div className="FlashSalesSection">
+    <div className="FlashSalesSection" >
         <div className="sectionName">
             <p className="title">Today’s</p>
             <div className="details" >
@@ -40,6 +41,11 @@ function FlashSalesSection() {
         <div className="products">
             <Products PRODUCTS_CAROUSEL={PRODUCTS_CAROUSEL} />
         </div>
+       <div className="btns">
+        <Link to={'/ShowAll'}>
+         <button className='btn'>View All Products</button>
+        </Link>
+       </div>
     </div>
   )
 }

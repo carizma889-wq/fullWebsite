@@ -10,6 +10,7 @@ import LogIn from "./pages/LogIn"
 import NotFound from "./pages/NotFound"
 import ProductDetails from "./pages/ProductDetails"
 import SignUp from "./pages/SignUp"
+import ShowAll from "./components/showAll"
 import Wishlist from "./pages/Wishlist"
 import './App.css'
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/LogIn" element={<LogIn/>}/>   
           <Route path="/Home" element={<HomePage />} />  
           <Route path="/About" element={<About/>}/>   
+          <Route path="/showAll" element={<ShowAll/>}/>
           <Route path="/Content" element={<Contact/>}/>   
           <Route path="/Cart" element={<Cart/>}/>   
           <Route path="/Account" element={<Account/>}/>   

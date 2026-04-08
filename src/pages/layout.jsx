@@ -11,8 +11,8 @@ const Layout = () => {
 {/*  */}
 <div className="dropdown">
   <button className="btn text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">English</button>
-  <ul className="dropdown-menu dropdown-menu-dark">
-    <li><a className="dropdown-item active" href="#">English</a></li>
+  <ul className="dropdown-menu dropdown-menu-dark"> 
+    <li><a  className="dropdown-item active" href="#">English</a></li>
     <li><a className="dropdown-item" href="#">Egypt</a></li>
     <li><a className="dropdown-item" href="#">French</a></li>
   </ul>

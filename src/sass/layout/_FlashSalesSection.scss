@@ -1,4 +1,5 @@
-;@use '../utils/variable' as *;
+@use '../utils/variable' as *;
+@use '../utils/mixin' as *;
 .FlashSalesSection{
     margin: 100px 0;
     .sectionName{
@@ -59,8 +60,17 @@
             }
         }
     }
+    .btns{
+      display: flex;
+      justify-content: center;
+      .btn{
+        margin-top: 40px;
+        @include btnGlobal($primary_color,16px  48px,white)
+      }
+    }
     
 }
+
 .myProducts {
   width: 100%;
   height: 100%;
@@ -115,9 +125,9 @@
       .price {
         span {
 
-          &:first-child {
-            // السعر بعد الخصم
-          }
+        //   &:first-child {
+        //     // السعر بعد الخصم
+        //   }
 
           &:last-child {
             margin-left: 10px;
@@ -133,6 +143,8 @@
     }
   }
 }
+
+
 /* أصغر الشاشات حتى 360px */
 @media (max-width: 360px) {
   .FlashSalesSection .sectionName {

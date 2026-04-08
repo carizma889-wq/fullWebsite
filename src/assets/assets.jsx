@@ -106,7 +106,7 @@ export const Property=[
     {id:uuid(),img:StorefrontIcon,number:'10.5k ',details:'Sallers active our site'},
     {id:uuid(),img:MonetizationOnIcon,number:'33K',details:'Mopnthly Produduct Sale'},
     {id:uuid(),img:ShoppingBagIcon,number:'45.5K ',details:'Customer active in our site'},
-    {id:uuid(),img:money,number:'25Kk ',details:'Anual gross sale in our site'},
+    {id:uuid(),img:money,number:'25K',details:'Anual gross sale in our site'},
 ]
 export const detailsPeopleAbout=[
     {id:uuid(),img:man1,name:'Tom Cruise',details:'Founder & Chairman',iconsSocial:[<TwitterIcon/>,<InstagramIcon/>,<LinkedInIcon/>]},
@@ -121,4 +121,25 @@ export const propertyAbout=[
 export const DataPageContact=[
 {id:uuid(),img:call,titleImg:'Call To Us',details:['We are available 24/7, 7 days a week.','Phone: +8801611112222']},
 {id:uuid(),img:email,titleImg:'Write To US',details:['Fill out our form and we will contact you within 24 hours.','Emails: customer@exclusive.com','Emails: support@exclusive.com']}
+]
+
+
+export const showAllProduct=[
+    {id:uuid(),title:"Breed Dry Dog Food",salary:100,startNumberempty:2,startNumberYellow:3,numberStarmaybe:0,evaluation:'35',img:product9,color:[]},
+    {id:uuid(),title:"CANON EOS DSLR Camera",salary:360,startNumberempty:1,startNumberYellow:4,numberStarmaybe:0,evaluation:'95',img:product10,color:[]},
+    {id:uuid(),title:"ASUS FHD Gaming Laptop",salary:700,startNumberempty:0,startNumberYellow:5,numberStarmaybe:0,evaluation:'325',img:product11,color:[]},
+    {id:uuid(),title:"Curology Product Set",salary:500,startNumberempty:1,startNumberYellow:4,numberStarmaybe:0,evaluation:'145',img:product12,color:[]},
+    {id:uuid(),title:"Kids Electric Car",salary:960,startNumberempty:0,startNumberYellow:5,numberStarmaybe:0,evaluation:'65',img:product13,color:['red','primary']},
+    {id:uuid(),title:"Jr. Zoom Soccer Cleats",salary:1160,startNumberempty:0,startNumberYellow:5,numberStarmaybe:0,evaluation:'35',img:product14,color:['yellow','primary']},
+    {id:uuid(),title:"GP11 Shooter USB Gamepad",salary:660,startNumberempty:0,startNumberYellow:4,numberStarmaybe:1,evaluation:'55',img:product15,color:['black','primary']},
+    {id:uuid(),title:"Quilted Satin Jacket",salary:660,startNumberempty:0,startNumberYellow:4,numberStarmaybe:1,evaluation:'55',img:product16,color:['green','primary']}, 
+    {id:uuid(),title:"The north coat",salaryOffer:260,salary:360,startNumberYellow:5,evaluation:'65',startNumberempty:0,numberStarmaybe:0,img:product5},
+    {id:uuid(),title:"Gucci duffle bag",salaryOffer:960,salary:1160,startNumberYellow:4,evaluation:'65',startNumberempty:0,numberStarmaybe:1,img:product6},
+    {id:uuid(),title:"RGB liquid CPU Cooler",salaryOffer:160,salary:170,startNumberYellow:4,evaluation:'65',startNumberempty:0,numberStarmaybe:1,img:product7},
+    {id:uuid(),title:"Small BookSelf",salaryOffer:0,salary:360,startNumberYellow:5,evaluation:'65',startNumberempty:0,numberStarmaybe:0,img:product8},
+       {id:uuid(),title:'HAVIT HV-G92 Gamepad',salaryOffer:'120', salary:'160',startNumberYellow:5,startNumberempty:0,evaluation:'88',numberStarmaybe:0,img:product1},
+    {id:uuid(),title:'AK-900 Wired Keyboard',salaryOffer:'960', salary:'1160',startNumberYellow:4,startNumberempty:1,evaluation:'88',numberStarmaybe:0,img:product2},
+    {id:uuid(),title:'IPS LCD Gaming Monitor',salaryOffer:'370', salary:'400',startNumberYellow:5,startNumberempty:0,evaluation:'88',numberStarmaybe:0,img:product3},
+    {id:uuid(),title:'S-Series Comfort Chair ',salaryOffer:'375', salary:'$400',startNumberYellow:4,startNumberempty:0,evaluation:'88',numberStarmaybe:1,img:product4},
+    {id:uuid(),title:'S-Series Comfort Chair ',salaryOffer:'375', salary:'$400',startNumberYellow:4,startNumberempty:0,evaluation:'88',numberStarmaybe:1,img:product4},
 ]
