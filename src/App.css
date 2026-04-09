@@ -974,7 +974,7 @@
 
 .categoryCard {
   height: 120px;
-  background: #f5f5f5;
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -982,6 +982,7 @@
   gap: 10px;
   cursor: pointer;
   transition: 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0.5058823529);
 }
 
 .categoryCard:hover {
@@ -996,6 +997,7 @@
 .categoryCard.active {
   background: #DB4444;
   color: white;
+  border: 1px solid #DB4444;
 }
 
 .header {
