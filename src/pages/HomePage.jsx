@@ -7,7 +7,7 @@ import FlashSalesSection from '../components/FlashSalesSection';
 
 function HomePage() {
   return (
-    <div>
+    <div >
       <Header />
       <Container fixed>
         <HeroSection/>
