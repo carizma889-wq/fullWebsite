@@ -6,7 +6,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { FreeMode, Pagination } from 'swiper/modules';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
-function Products({PRODUCTS_CAROUSEL}) {
+function Products({PRODUCTS_CAROUSEL,prevRef,nextRef}) {
  return (
     <>
       <Swiper
@@ -25,7 +25,15 @@ function Products({PRODUCTS_CAROUSEL}) {
       slidesPerView: 4,
     },
   }}
+onSwiper={(swiper) => {
+    setTimeout(() => {
+      swiper.params.navigation.prevEl = prevRef.current;
+      swiper.params.navigation.nextEl = nextRef.current;
 
+      swiper.navigation.init();
+      swiper.navigation.update();
+    });
+  }}
         loop={true}
         freeMode={true}
         modules={[FreeMode]}

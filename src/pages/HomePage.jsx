@@ -4,6 +4,7 @@ import 'swiper/css';
 import HeroSection from '../components/HeroSection';
 import Container from '@mui/material/Container';
 import FlashSalesSection from '../components/FlashSalesSection';
+import Category from '../components/Category';
 
 function HomePage() {
   return (
@@ -14,7 +15,7 @@ function HomePage() {
       </Container>
         <FlashSalesSection/>
         <Container fixed>
-          {/*  */}
+          <Category/>
         </Container>
     </div>
   )

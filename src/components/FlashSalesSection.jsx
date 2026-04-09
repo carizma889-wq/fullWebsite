@@ -1,9 +1,13 @@
-import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
-import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import {useRef  } from "react";
+
 import Products from './Products';
 import { PRODUCTS_CAROUSEL } from '../assets/assets';
 import { Link } from 'react-router-dom';
 function FlashSalesSection() {
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
   return (
     <div className="FlashSalesSection" >
         <div className="sectionName">
@@ -32,14 +36,14 @@ function FlashSalesSection() {
                 </div>
                 {/* end name  */}
                 <div className="arrows">
-                    <div className="left"><ArrowCircleLeftOutlinedIcon className='arrow'/></div>
-                    <div className="right"><ArrowCircleRightOutlinedIcon className='arrow'/></div>
+                    <button ref={prevRef}><ArrowBackIosNewIcon/></button>
+                    <button ref={nextRef}><ArrowForwardIosIcon/></button>
                 </div>
             </div>
         </div>
         {/* end  */}
         <div className="products">
-            <Products PRODUCTS_CAROUSEL={PRODUCTS_CAROUSEL} />
+            <Products PRODUCTS_CAROUSEL={PRODUCTS_CAROUSEL} nextRef={nextRef} prevRef={prevRef} />
         </div>
        <div className="btns">
         <Link to={'/ShowAll'}>

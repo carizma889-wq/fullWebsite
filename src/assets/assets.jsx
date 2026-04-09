@@ -38,6 +38,15 @@ import Services from '/img/Services.png'
 // 
 import call from '/img/IconCall.png';
 import email from '/img/IconEmail.png';
+// 
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import DesktopWindowsOutlinedIcon from '@mui/icons-material/DesktopWindowsOutlined';
+import WatchIcon from '@mui/icons-material/Watch';
+import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
+import HeadphonesOutlinedIcon from '@mui/icons-material/HeadphonesOutlined';
+import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
+
+// 
 
 export const NAV_LINKS =[ 'Home','Content','About','Sign Up']
 
@@ -62,12 +71,14 @@ export const PRODUCTS_CAROUSEL=[
 ]
 
 export const CATEGORIES=[
-    {id:uuid(),name:'Phones',icon:''},
-    {id:uuid(),name:'Computers',icon:''},
-    {id:uuid(),name:'SmartWatch',icon:''},
-    {id:uuid(),name:'Camera',icon:''},
-    {id:uuid(),name:'HeadPhones',icon:''},
-    {id:uuid(),name:'Gaming',icon:''},
+    {id:uuid(),name:'Phones',icon:<PhoneAndroidIcon/>},
+    {id:uuid(),name:'Computers',icon:<DesktopWindowsOutlinedIcon/>},
+    {id:uuid(),name:'SmartWatch',icon:<WatchIcon/>},
+    {id:uuid(),name:'Camera',icon:<CameraAltOutlinedIcon/>},
+    {id:uuid(),name:'HeadPhones',icon:<HeadphonesOutlinedIcon/>},
+    {id:uuid(),name:'Gaming',icon:<SportsEsportsOutlinedIcon/>},
+    {id:uuid(),name:'Gaming',icon:<SportsEsportsOutlinedIcon/>},
+    {id:uuid(),name:'Gaming',icon:<SportsEsportsOutlinedIcon/>},
 ]
 export const BEST_SELLING_PRODUCTS=[
     {id:uuid(),name:"The north coat",salaryOffer:260,salary:360,startNumberYellow:5,evaluation:'65',startNumberempty:0,numberStarmaybe:0,img:product5},
