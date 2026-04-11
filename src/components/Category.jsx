@@ -2,12 +2,12 @@ import { CATEGORIES } from "../assets/assets"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
+// import "swiper/css/grid";
 import "swiper/css/navigation";
 import { useState,useRef  } from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-
-
+// import { Grid } from "swiper/modules";
 function Category() {
     const [active, setActive] = useState(CATEGORIES[3].id);
     const prevRef = useRef(null);
@@ -31,17 +31,22 @@ function Category() {
       <Swiper
         modules={[Navigation]}
         navigation
+        // grid={{
+        //   rows:2,
+        //   fill:'row',
+        // }}
         spaceBetween={20}
         slidesPerView={6}
+        
           onBeforeInit={(swiper) => {
           swiper.params.navigation.prevEl = prevRef.current;
           swiper.params.navigation.nextEl = nextRef.current;
         }}
         breakpoints={{
-          0: { slidesPerView: 2 },
+          0: { slidesPerView: 1},
           480: { slidesPerView: 3 },
           768: { slidesPerView: 4 },
-          1024: { slidesPerView: 6 },
+          1024: { slidesPerView: 6},
         }}
       >
         {CATEGORIES.map((cat) => (

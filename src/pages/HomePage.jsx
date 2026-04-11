@@ -5,6 +5,7 @@ import HeroSection from '../components/HeroSection';
 import Container from '@mui/material/Container';
 import FlashSalesSection from '../components/FlashSalesSection';
 import Category from '../components/Category';
+import BestProducts from '../components/BestProducts';
 
 function HomePage() {
   return (
@@ -16,6 +17,7 @@ function HomePage() {
         <FlashSalesSection/>
         <Container fixed>
           <Category/>
+          <BestProducts/>
         </Container>
     </div>
   )

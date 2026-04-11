@@ -1,0 +1,38 @@
+@use '../utils/variable' as *;
+@use '../utils/mixin' as *;
+
+
+.BestProductsSection {
+    margin: 100px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.detailsHeader{
+    p{
+        color: $primary_color;
+        margin-left: 30px;
+        position: relative;
+        &::before{
+            content: '';
+            width: 20px;
+            height: 40px;
+            background-color: $primary_color;
+            position: absolute;
+            top: -8px;
+            left: -30px;
+            border-radius: 5px;
+        }
+    }
+ 
+
+}
+.btnView {
+    display: flex;
+    @include btnGlobal($primary_color,16px  48px,white);
+    border: none;
+}

@@ -1004,6 +1004,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 60px;
 }
 
 .detailsHeader p {
@@ -1039,6 +1040,41 @@
 .arrows button:hover {
   background: #db4444;
   color: white;
+}
+
+.BestProductsSection {
+  margin: 100px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.detailsHeader p {
+  color: #DB4444;
+  margin-left: 30px;
+  position: relative;
+}
+.detailsHeader p::before {
+  content: "";
+  width: 20px;
+  height: 40px;
+  background-color: #DB4444;
+  position: absolute;
+  top: -8px;
+  left: -30px;
+  border-radius: 5px;
+}
+
+.btnView {
+  display: flex;
+  padding: 16px 48px;
+  background-color: #DB4444;
+  color: white;
+  border: none;
 }
 
 body {

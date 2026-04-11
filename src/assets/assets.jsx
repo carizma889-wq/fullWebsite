@@ -152,5 +152,4 @@ export const showAllProduct=[
     {id:uuid(),title:'AK-900 Wired Keyboard',salaryOffer:'960', salary:'1160',startNumberYellow:4,startNumberempty:1,evaluation:'88',numberStarmaybe:0,img:product2},
     {id:uuid(),title:'IPS LCD Gaming Monitor',salaryOffer:'370', salary:'400',startNumberYellow:5,startNumberempty:0,evaluation:'88',numberStarmaybe:0,img:product3},
     {id:uuid(),title:'S-Series Comfort Chair ',salaryOffer:'375', salary:'$400',startNumberYellow:4,startNumberempty:0,evaluation:'88',numberStarmaybe:1,img:product4},
-    {id:uuid(),title:'S-Series Comfort Chair ',salaryOffer:'375', salary:'$400',startNumberYellow:4,startNumberempty:0,evaluation:'88',numberStarmaybe:1,img:product4},
 ]
