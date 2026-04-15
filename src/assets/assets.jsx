@@ -47,6 +47,10 @@ import HeadphonesOutlinedIcon from '@mui/icons-material/HeadphonesOutlined';
 import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
 
 // 
+import playStation5 from '/img/playStation5.png'
+import perfume from '/img/perfume.png'
+import woman from '/img/woman.png'
+import speakers from '/img/speakers.png'
 
 export const NAV_LINKS =[ 'Home','Content','About','Sign Up']
 
@@ -88,6 +92,7 @@ export const BEST_SELLING_PRODUCTS=[
 ]
 
 export const OurProducts=[
+
 {id:uuid(),title:"Breed Dry Dog Food",salary:100,startNumberempty:2,startNumberYellow:3,numberStarmaybe:0,evaluation:'35',img:product9,color:[]},
 {id:uuid(),title:"CANON EOS DSLR Camera",salary:360,startNumberempty:1,startNumberYellow:4,numberStarmaybe:0,evaluation:'95',img:product10,color:[]},
 {id:uuid(),title:"ASUS FHD Gaming Laptop",salary:700,startNumberempty:0,startNumberYellow:5,numberStarmaybe:0,evaluation:'325',img:product11,color:[]},
@@ -96,13 +101,14 @@ export const OurProducts=[
 {id:uuid(),title:"Jr. Zoom Soccer Cleats",salary:1160,startNumberempty:0,startNumberYellow:5,numberStarmaybe:0,evaluation:'35',img:product14,color:['yellow','primary']},
 {id:uuid(),title:"GP11 Shooter USB Gamepad",salary:660,startNumberempty:0,startNumberYellow:4,numberStarmaybe:1,evaluation:'55',img:product15,color:['black','primary']},
 {id:uuid(),title:"Quilted Satin Jacket",salary:660,startNumberempty:0,startNumberYellow:4,numberStarmaybe:1,evaluation:'55',img:product16,color:['green','primary']}, 
+
 ]
 
-export const Featured=[
-    {id:uuid(),name:'PlayStation 5',details:'Black and White version of the PS5 coming out on sale.',img:''},
-    {id:uuid(),name:'Women’s Collections',details:'Featured woman collections that give you another vibe.',img:''},
-    {id:uuid(),name:'Speakers',details:'Amazon wireless speakers',img:''},
-    {id:uuid(),name:'Perfume',details:'GUCCI INTENSE OUD EDP',img:''},
+export const featured=[
+    {id:uuid(),name:'PlayStation 5',details:'Black and White version of the PS5 coming out on sale.',img:playStation5},
+    {id:uuid(),name:'Women’s Collections',details:'Featured woman collections that give you another vibe.',img:woman},
+    {id:uuid(),name:'Speakers',details:'Amazon wireless speakers',img:speakers},
+    {id:uuid(),name:'Perfume',details:'GUCCI INTENSE OUD EDP',img:perfume},
 ]
 
 export const FooterData={
@@ -152,4 +158,11 @@ export const showAllProduct=[
     {id:uuid(),title:'AK-900 Wired Keyboard',salaryOffer:'960', salary:'1160',startNumberYellow:4,startNumberempty:1,evaluation:'88',numberStarmaybe:0,img:product2},
     {id:uuid(),title:'IPS LCD Gaming Monitor',salaryOffer:'370', salary:'400',startNumberYellow:5,startNumberempty:0,evaluation:'88',numberStarmaybe:0,img:product3},
     {id:uuid(),title:'S-Series Comfort Chair ',salaryOffer:'375', salary:'$400',startNumberYellow:4,startNumberempty:0,evaluation:'88',numberStarmaybe:1,img:product4},
+]
+
+export const ForYou=[
+    {id:uuid(),name:"ASUS FHD Gaming Laptop",salaryOffer:960,salary:1160,startNumberYellow:5,evaluation:'65',startNumberempty:0,numberStarmaybe:0,img:product11},
+    {id:uuid(),name:"IPS LCD Gaming Monitor",salaryOffer:1160,salary:0,startNumberYellow:5,evaluation:'65',startNumberempty:0,numberStarmaybe:0,img:product3},
+    {id:uuid(),name:"HAVIT HV-G92 Gamepad",salaryOffer:560,salary:0,startNumberYellow:5,evaluation:'65',startNumberempty:0,numberStarmaybe:0,img:product1},
+    {id:uuid(),name:"AK-900 Wired Keyboard",salaryOffer:200,salary:0,startNumberYellow:5,evaluation:'65',startNumberempty:0,numberStarmaybe:0,img:product2},
 ]

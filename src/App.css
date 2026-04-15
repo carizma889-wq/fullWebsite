@@ -1077,6 +1077,151 @@
   border: none;
 }
 
+.Featured {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+.Featured .PlayStation {
+  background-repeat: no-repeat;
+  width: 570px;
+  height: 600px;
+  background-color: black;
+  position: relative;
+}
+.Featured .PlayStation .details {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
+.Featured .PlayStation .details h1 {
+  font-size: 24px;
+}
+.Featured .PlayStation .details p {
+  font-size: 14px;
+  width: 240px;
+}
+.Featured .PlayStation .details p:last-child {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.Featured .Women’sandOthers {
+  width: 570px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.Featured .Women’sandOthers .Women’s {
+  background-repeat: no-repeat;
+  width: 570px;
+  background-color: black;
+  height: 284px;
+  position: relative;
+}
+.Featured .Women’sandOthers .Women’s .details {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
+.Featured .Women’sandOthers .Women’s .details h1 {
+  font-size: 24px;
+}
+.Featured .Women’sandOthers .Women’s .details p {
+  font-size: 14px;
+  width: 240px;
+}
+.Featured .Women’sandOthers .Women’s .details p:last-child {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.Featured .Women’sandOthers .others {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+.Featured .Women’sandOthers .others .Speakers {
+  background-repeat: no-repeat;
+  width: 270px;
+  background-color: black;
+  height: 284px;
+  position: relative;
+}
+.Featured .Women’sandOthers .others .Speakers .details {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
+.Featured .Women’sandOthers .others .Speakers .details h1 {
+  font-size: 24px;
+}
+.Featured .Women’sandOthers .others .Speakers .details p {
+  font-size: 14px;
+  width: 240px;
+}
+.Featured .Women’sandOthers .others .Speakers .details p:last-child {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.Featured .Women’sandOthers .others .Perfume {
+  background-repeat: no-repeat;
+  width: 270px;
+  background-color: black;
+  height: 284px;
+  position: relative;
+}
+.Featured .Women’sandOthers .others .Perfume .details {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
+.Featured .Women’sandOthers .others .Perfume .details h1 {
+  font-size: 24px;
+}
+.Featured .Women’sandOthers .others .Perfume .details p {
+  font-size: 14px;
+  width: 240px;
+}
+.Featured .Women’sandOthers .others .Perfume .details p:last-child {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Property {
+  flex-wrap: wrap;
+  margin: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+.Property .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ForYou .title h1 {
+  position: relative;
+  margin-left: 35px;
+}
+.ForYou .title h1::before {
+  content: "";
+  position: absolute;
+  background-color: #DB4444;
+  height: 40px;
+  width: 20px;
+  bottom: -10px;
+  left: -36px;
+  border-radius: 5px;
+}
+
 body {
   padding: 0;
   margin: 0;

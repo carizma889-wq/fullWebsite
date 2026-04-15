@@ -10,6 +10,9 @@
 @use './layout/showAll';
 @use './layout/Category';
 @use './layout/BestProducts';
+@use './layout/OurProduct';
+@use './layout/Featured';
+@use './layout/Wishlist';
 body{
     padding: 0;
     margin: 0;

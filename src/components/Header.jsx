@@ -6,9 +6,10 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import InputAdornment from '@mui/material/InputAdornment';
-function Header({isSignUpOrLogIN,isUser}) {
-  return (
 
+function Header({isSignUpOrLogIN,isUser}) {
+  
+  return (
     <>
     <div style={{width:'100%',borderBottom:'1px solid black'}}>
       
@@ -39,7 +40,9 @@ function Header({isSignUpOrLogIN,isUser}) {
           </InputAdornment>
         ),
       }}/>
-        <FavoriteBorderIcon  sx={{color:'black',marginBottom:'0px',cursor:'pointer',display:isSignUpOrLogIN==true?isUser==true?'':'':'block'}}/>
+        <Link to={'/Wishlist'}>
+        <FavoriteBorderIcon   sx={{color:'black',marginBottom:'0px',cursor:'pointer',display:isSignUpOrLogIN==true?isUser==true?'':'':'block'}}/>
+      </Link>
         <LocalGroceryStoreOutlinedIcon sx={{color:'black',marginBottom:'0px',cursor:'pointer' ,display:isSignUpOrLogIN==true?'none':'block'}}/>
         <PersonOutlineOutlinedIcon sx={{marginBottom:'0px',cursor:'pointer',display:isSignUpOrLogIN==true?'none':'block'}}/>
       </div>

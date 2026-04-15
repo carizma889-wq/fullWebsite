@@ -7,7 +7,9 @@ import FlashSalesSection from '../components/FlashSalesSection';
 import Category from '../components/Category';
 import BestProducts from '../components/BestProducts';
 import Categories from '../components/Categories';
-
+import OurProduct from '../components/OurProduct';
+import Featured from '../components/Featured';
+//FlashSalesSection , BestProducts , ,OurProduct
 function HomePage() {
   return (
     <div >
@@ -15,11 +17,13 @@ function HomePage() {
       <Container fixed>
         <HeroSection/>
       </Container>
-        <FlashSalesSection/>
+        <FlashSalesSection/> 
         <Container fixed>
           <Category/>
           <BestProducts/>
           <Categories/>
+          <OurProduct/>
+          <Featured/>
         </Container>
     </div>
   )
