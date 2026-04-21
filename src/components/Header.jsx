@@ -43,7 +43,9 @@ function Header({isSignUpOrLogIN,isUser}) {
         <Link to={'/Wishlist'}>
         <FavoriteBorderIcon   sx={{color:'black',marginBottom:'0px',cursor:'pointer',display:isSignUpOrLogIN==true?isUser==true?'':'':'block'}}/>
       </Link>
+      <Link to={'/Cart'}>
         <LocalGroceryStoreOutlinedIcon sx={{color:'black',marginBottom:'0px',cursor:'pointer' ,display:isSignUpOrLogIN==true?'none':'block'}}/>
+      </Link>
         <PersonOutlineOutlinedIcon sx={{marginBottom:'0px',cursor:'pointer',display:isSignUpOrLogIN==true?'none':'block'}}/>
       </div>
       </div>

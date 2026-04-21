@@ -7,8 +7,10 @@ import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { WishlistContext } from "../context/WishListContext";
+import { CartContext } from "../context/CartContext";
 function BestProducts() {
   const { toggleWishlist } = useContext(WishlistContext);
+  const {toggleCart} =useContext(CartContext)
   return (
     <div className="BestProductsSection">
       <div className="header">
@@ -29,7 +31,7 @@ function BestProducts() {
           <div className="details">
             <p style={{marginTop:'15px'}}>{data.name}</p>
             <div className="salary" style={{display:'flex',gap:'20px'}}>
-              <p style={{color:'#DB4444'}}>${data.salaryOffer}</p>
+              <p onClick={() => toggleCart(data)} style={{color:'#DB4444'}}>${data.salaryOffer}</p>
               <p style={{color:'#000000a1',textDecoration:'line-through'}}>${data.salary}</p>
             </div>
             <div className="stars">
