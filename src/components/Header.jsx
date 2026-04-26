@@ -46,7 +46,9 @@ function Header({isSignUpOrLogIN,isUser}) {
       <Link to={'/Cart'}>
         <LocalGroceryStoreOutlinedIcon sx={{color:'black',marginBottom:'0px',cursor:'pointer' ,display:isSignUpOrLogIN==true?'none':'block'}}/>
       </Link>
-        <PersonOutlineOutlinedIcon sx={{marginBottom:'0px',cursor:'pointer',display:isSignUpOrLogIN==true?'none':'block'}}/>
+      <Link to={'/User'}>
+        <PersonOutlineOutlinedIcon sx={{color:'black',marginBottom:'0px',cursor:'pointer',display:isSignUpOrLogIN==true?'none':'block'}}/>
+      </Link>
       </div>
       </div>
   </div>

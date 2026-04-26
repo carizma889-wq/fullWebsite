@@ -42,7 +42,7 @@ onSwiper={(swiper) => {
        {PRODUCTS_CAROUSEL.map((data)=>(
         <SwiperSlide className='item' key={data.id} >
             <div  className="BoxImg" >
-                <img className='img' src={data.img} alt="" />
+                <img className='img' src={`${data.img_url}`} alt="" />
                 <button className='btnHide' onClick={()=>{handleClicked(data.id)}} > add to card</button>
             </div>
             <div className="details">
@@ -51,8 +51,8 @@ onSwiper={(swiper) => {
                 <span>${data.salaryOffer}</span> <span>${data.salary}</span>
 
                <div className="stars">
-                 {Array.from({length:data.startNumberYellow}).map(()=>{
-                  return <StarIcon sx={{color:'#FFAD33'}}/>
+                 {Array.from({length:data.startNumberYellow}).map((index)=>{
+                  return <StarIcon key={index} sx={{color:'#FFAD33'}}/>
                 })}
                 {Array.from({length:data.startNumberempty}).map(()=>{
                   return <StarOutlineIcon/>

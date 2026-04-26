@@ -12,8 +12,10 @@ import ProductDetails from "./pages/ProductDetails"
 import SignUp from "./pages/SignUp"
 import ShowAll from "./components/showAll"
 import Wishlist from "./pages/Wishlist"
+import User from "./pages/User"
 import './App.css'
 function App() {
+  
   return (
     <>
     <Routes>
@@ -30,6 +32,7 @@ function App() {
           <Route path="*" element={<NotFound/>}/>   
           <Route path="/ProductDetails" element={<ProductDetails/>}/>   
           <Route path="/Wishlist" element={<Wishlist/>}/>   
+          <Route path='/User' element={<User/>}/>
         </Route>
       </Routes>
     </>

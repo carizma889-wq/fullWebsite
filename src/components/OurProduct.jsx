@@ -1,10 +1,9 @@
-import { OurProducts } from "../assets/assets"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/navigation";
-import { useState,useRef  } from "react";
+import { useState,useRef,useEffect  } from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Grid } from "swiper/modules";
@@ -12,8 +11,24 @@ import StarIcon from '@mui/icons-material/Star';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { Link } from "react-router-dom";
+import supabase from '../../supabase'
 
 function OurProduct() {
+    const [data,SetData]=useState([])
+    useEffect(()=>{
+        const fetchData=async()=>{
+            const { data, error } = await supabase
+    .from("PRODUCTS")
+    .select("*")
+    .eq("category", "OurProducts");
+    if (error) {
+        console.log(error);
+    } else {
+    SetData(data)
+    }
+        }
+        fetchData()
+    },[])
     const [activeColors,SetActiveColors]=useState({})
     const prevRef = useRef(null);
     
@@ -53,34 +68,34 @@ return (
         1024:  {slidesPerView: 4},
         }}
         >
-        {OurProducts.map((data) => {
-            const activeIndex=activeColors[data.id]??0;
-            return  <SwiperSlide  key={data.id}>
+        {data.map((d) => {
+            const activeIndex=activeColors[d.id]??0;
+            return  <SwiperSlide  key={d.id}>
             <div className="img" style={{background:'#F5F5F5',width:'270px',height:'250px',display:'flex',justifyContent:'center',alignItems:'center'}}>
-                <img style={{objectFit:'contain'}} src={data.img} alt="" />
+                <img style={{objectFit:'contain'}} src={d.img_url} alt="" />
             </div>
             <div className="details">
-                <p>{data.title}</p>
+                <p>{d.details}</p>
             </div>
             <div className="salary&Star" style={{display:'flex',gap:'20px'}}>
-                <p style={{color:'#DB4444'}}>$ {data.salary}</p>
+                <p style={{color:'#DB4444'}}>$ {d.salary}</p>
                 <div className="stars">
-                {Array.from({length:data.startNumberYellow}).map(()=>{
+                {Array.from({length:d.startNumberYellow}).map(()=>{
                     return <StarIcon  sx={{color:'#FFAD33'}}/>
                 })}
-                {Array.from({length:data.startNumberempty}).map(()=>{
+                {Array.from({length:d.startNumberempty}).map(()=>{
                     return <StarOutlineIcon/>
                 })}
-                {Array.from({length:data.numberStarmaybe}).map(()=>{
+                {Array.from({length:d.numberStarmaybe}).map(()=>{
                     return <StarHalfIcon sx={{color:'#FFAD33'}}/>
                 })}
                 </div>
-                <p style={{color:'#00000093'}}>({data.evaluation})</p>
+                <p style={{color:'#00000093'}}>({d.evaluation})</p>
             </div>
             <div className="colors" style={{display:'flex',gap:'20px',padding:'5px'}}>
                 
-                {data.color.map((c,index)=>(
-                    <p key={index} style={{width:'20px',height:'20px',background:c=="primary"?'#DB4444':c,borderRadius:'50%',outline:activeIndex?'1px solid black':'none',outlineOffset:'3px'}} className={activeIndex===index?'active':'none'} onClick={()=>{handle(data.id,index)}} ></p>
+                {d.color?.map((c,index)=>(
+                    <p  style={{width:'20px',height:'20px',background:c=="primary"?'#DB4444':c,borderRadius:'50%',outline:activeIndex?'1px solid black':'none',outlineOffset:'3px'}} className={activeIndex===index?'active':'none'} onClick={()=>{handle(d.id,index)}} ></p>
                 ))}
             </div>
           </SwiperSlide>

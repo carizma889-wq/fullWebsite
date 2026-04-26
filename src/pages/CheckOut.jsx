@@ -34,6 +34,7 @@ const [value, setValue] = useState("cash");
     
   <Container fixed>
     <div className="section" style={{margin:'100px 0',}}>
+    <p style={{marginBottom:'50px',color:'#00000062'}}>Account / My Account / Product / View Cart / <span style={{color:'black'}}>CheckOut</span> </p>
     <h1 style={{marginBottom:'30px',color:'#000000'}}>Billing Details</h1>
       <div className="" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
       <div className="Billing">

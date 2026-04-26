@@ -1,4 +1,3 @@
-import { BEST_SELLING_PRODUCTS } from "../assets/assets"
 import "swiper/css";
 import "swiper/css/navigation";
 import StarIcon from '@mui/icons-material/Star';
@@ -8,7 +7,25 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { WishlistContext } from "../context/WishListContext";
 import { CartContext } from "../context/CartContext";
+import supabase from '../../supabase'
+
+import { useEffect,useState } from "react";
 function BestProducts() {
+  const [data,SetData]=useState([])
+      useEffect(()=>{
+          const fetchData=async()=>{
+              const { data, error } = await supabase
+      .from("PRODUCTS")
+      .select("*")
+      .eq("category", "BEST_SELLING_PRODUCTS");
+      if (error) {
+          console.log(error);
+      } else {
+      SetData(data)
+      }
+          }
+          fetchData()
+      },[])
   const { toggleWishlist } = useContext(WishlistContext);
   const {toggleCart} =useContext(CartContext)
   return (
@@ -23,13 +40,13 @@ function BestProducts() {
         </Link>
       </div>
       <div className="BestProduct" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'20px'}} >
-          {BEST_SELLING_PRODUCTS.map((data)=>(
+          {data.map((data)=>(
         <div key={data.id}>
           <div onClick={() => toggleWishlist(data)} className="img" style={{background:'#F5F5F5',width:'270px',height:'250px',display:'flex',justifyContent:'center',alignItems:'center'}}>
-            <img  style={{objectFit:'contain'}} src={data.img} alt="" />
+            <img  style={{objectFit:'contain'}} src={data.img_url} alt="" />
           </div>
           <div className="details">
-            <p style={{marginTop:'15px'}}>{data.name}</p>
+            <p style={{marginTop:'15px'}}>{data.details}</p>
             <div className="salary" style={{display:'flex',gap:'20px'}}>
               <p onClick={() => toggleCart(data)} style={{color:'#DB4444'}}>${data.salaryOffer}</p>
               <p style={{color:'#000000a1',textDecoration:'line-through'}}>${data.salary}</p>
