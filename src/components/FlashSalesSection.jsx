@@ -16,6 +16,7 @@ function FlashSalesSection() {
     if (error) {
         console.log(error);
     } else {
+    console.log(data)
     SetData(data)
     }
         }

@@ -5,7 +5,7 @@
     display:flex;
     align-items:center;
     height: 100vh;
-    .img{
+    .img{ 
         img{
             height:701px;
             // width: 805px;
@@ -40,46 +40,34 @@
 
 
 @media (max-width: 991.98px) {
-  .mainSignUp{
-     width: 100%; 
-    max-width: 100%;
-    margin:100px 0;
-    display:flex;
-    align-items:center;
-    height: 100vh;
-    .img{
-        display: none;
-       
+.mainLogIn{
+    flex-wrap: wrap;
+    .img{ 
+        img{
+display: block;
+        }
     }
- }
+}
 }
 
 @media (max-width: 767.98px) {
-  .mainSignUp{
-        max-width: 100%;
- width: 100%;
-    margin:100px 0;
-    display:flex;
-    align-items:center;
-    height: 100vh;
-    .img{
-        display: none;
-       
+.mainLogIn{
+    
+    .img{ 
+        img{
+display: none;
+        }
     }
- }
+}
 }
 
-@media (max-width: 575.98px) {
- .mainSignUp{
-         width: 100%; 
-  max-width: 400px;
-    margin:100px 0;
-    display:flex;
-    align-items:center;
-    height: 100vh;
-    .img{
-        display: none;
-       
+@media (max-min: 575.98px) {
+.mainLogIn{
+    
+    .img{ 
+        img{
+display: none;
+        }
     }
- }
+}
 }

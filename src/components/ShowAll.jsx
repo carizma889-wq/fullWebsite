@@ -5,9 +5,12 @@ import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { useState,useEffect  } from "react";
 import supabase from '../../supabase'
+import CircularProgress from '@mui/material/CircularProgress';
 
 function ShowAll() {
   const [data,SetData]=useState([])
+    const [loading, setLoading] = useState(true);
+
     useEffect(()=>{
         const fetchData=async()=>{
             const { data, error } = await supabase
@@ -16,25 +19,31 @@ function ShowAll() {
     if (error) {
         console.log(error);
     } else {
-    SetData(data)
+     SetData(data)
+    setLoading(true)
     }
         }
         fetchData()
     },[])
   
   return (
-    <div>
+    loading ?(
+      <div className='loading' style={{position:'absolute',top:'50%',right:'50%'}}>
+      <CircularProgress sx={{zIndex:233,color:'#DB4444'}} aria-label="Loading…" size={50}  />
+    </div>
+   ):(
+       <div>
         <Header/>
         <Container fixed>
         <div className="show_product" style={{width:"100%",height:"100%",display:'grid', gridTemplateColumns:'repeat(3, 1fr)',gap:'30px'}}>
             {data.map((data)=>{
                 return <div key={data.id} className='itemShow' style={{display:'flex',justifyContent:'center',alignItems:'start',flexDirection:'column',}}>
                   <div  className="BoxImg"  >
-                <img className='img'  src={data.img} alt="" />
+                <img className='img'  src={data.img_url} alt="" />
                 <button className='btnHide' > add to card</button>
             </div>
             <div className="details">
-              <p>{data.title}</p>
+              <p>{data.details}</p>
               <div className="price">
                 <span>${data.salaryOffer}</span> <span>${data.salary}</span>
 
@@ -56,6 +65,7 @@ function ShowAll() {
         </div>
             </Container>
     </div>
+    )
   )
 }
 

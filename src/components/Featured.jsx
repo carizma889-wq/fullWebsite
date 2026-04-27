@@ -27,7 +27,7 @@ function Featured() {
            </div>
         </div>
         {/*  */}
-        <div className="others">
+        <div className="others" >
             <div  className="Speakers" style={{backgroundImage:`url(${featured[2].img})`}}>
             <div className="details">
                 <h1>{featured[2].name}</h1>

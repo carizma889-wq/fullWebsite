@@ -4,6 +4,7 @@
     align-items: center;
     color: white;
     position: relative;
+    
     .PlayStation{
         background-repeat: no-repeat;
         width: 570px;
@@ -32,6 +33,7 @@
         height: 600px;
         display: flex;
         flex-direction: column;
+         
         justify-content: space-between;
         position: relative;
         .Women’s{
@@ -61,7 +63,6 @@
             display: flex;
             position: relative;
             justify-content: space-between;
-
             .Speakers{
                 background-repeat: no-repeat;
                 width: 270px;
@@ -127,3 +128,19 @@
             flex-direction: column;
         }
     }
+
+
+
+    
+
+
+@media (max-width: 991.98px) {
+}
+
+@media (max-width: 767.98px) {
+
+}
+
+@media (max-min: 575.98px) {
+
+}

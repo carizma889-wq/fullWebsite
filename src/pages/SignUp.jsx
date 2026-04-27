@@ -5,6 +5,8 @@ import { useState } from "react";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { Link } from 'react-router-dom';
+import supabase from '../../supabase'
+
 function SignUp() {
     const [showPassword, setShowPassword] = useState(false);
 
