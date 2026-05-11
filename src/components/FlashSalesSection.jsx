@@ -1,12 +1,13 @@
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import {useRef  } from "react";
+import {useRef , useEffect,useState } from "react";
 import supabase from '../../supabase'
-import { useEffect,useState } from "react";
 import Products from './Products';
 import { Link } from 'react-router-dom';
+
+
 function FlashSalesSection() {
-    const [data,SetData]=useState([])
+    const [data, setData]=useState([])
     useEffect(()=>{
         const fetchData=async()=>{
             const { data, error } = await supabase
@@ -17,7 +18,7 @@ function FlashSalesSection() {
         console.log(error);
     } else {
     console.log(data)
-    SetData(data)
+    setData(data)
     }
         }
         fetchData()
@@ -59,7 +60,7 @@ function FlashSalesSection() {
         </div>
         {/* end  */}
         <div className="products">
-            <Products PRODUCTS_CAROUSEL={data} nextRef={nextRef} prevRef={prevRef} />
+            <Products   PRODUCTS_CAROUSEL={data} nextRef={nextRef} prevRef={prevRef} />
         </div>
        <div className="btns">
         <Link to={'/ShowAll'}>

@@ -3,12 +3,12 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import StarIcon from '@mui/icons-material/Star';
-import { FreeMode, Pagination } from 'swiper/modules';
+import { FreeMode } from 'swiper/modules';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
-function Products({PRODUCTS_CAROUSEL,prevRef,nextRef}) {
+function Products({PRODUCTS_CAROUSEL,prevRef,nextRef,dispatch}) {
  return (
-    <>
+
       <Swiper
          spaceBetween={20}
           breakpoints={{
@@ -66,13 +66,13 @@ onSwiper={(swiper) => {
         </SwiperSlide>
        ))}
       </Swiper>
-    
-    </>
   );
-}
-
-function handleClicked(id){
+  function handleClicked(id){
+  dispatch()
 window.alert("hello"+id)
 }
+}
+
+
 
 export default Products
