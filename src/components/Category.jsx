@@ -2,12 +2,10 @@ import { CATEGORIES } from "../assets/assets"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
-// import "swiper/css/grid";
 import "swiper/css/navigation";
 import { useState,useRef  } from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-// import { Grid } from "swiper/modules";
 function Category() {
     const [active, setActive] = useState(CATEGORIES[3].id);
     const prevRef = useRef(null);
@@ -31,10 +29,7 @@ function Category() {
       <Swiper
         modules={[Navigation]}
         navigation
-        // grid={{
-        //   rows:2,
-        //   fill:'row',
-        // }}
+        
         spaceBetween={20}
         slidesPerView={6}
         

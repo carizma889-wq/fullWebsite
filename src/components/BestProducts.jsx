@@ -4,28 +4,20 @@ import StarIcon from '@mui/icons-material/Star';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import { WishlistContext } from "../context/WishListContext";
 import { CartContext } from "../context/CartContext";
-import supabase from '../../supabase'
 
-import { useEffect,useState } from "react";
+import { fetchApi } from "../features/ecommerceStore";
+import { useSelector,useDispatch } from "react-redux";
 function BestProducts() {
-  const [data,SetData]=useState([])
-      useEffect(()=>{
-          const fetchData=async()=>{
-              const { data, error } = await supabase
-      .from("PRODUCTS")
-      .select("*")
-      .eq("category", "BEST_SELLING_PRODUCTS");
-      if (error) {
-          console.log(error);
-      } else {
-      SetData(data)
-      }
-          }
-          fetchData()
-      },[])
+  const product=useSelector((state)=>state.ecommerce.products)
+    const dispatch=useDispatch()
+        useEffect(()=>{
+        console.log('redux fetching')
+        dispatch(fetchApi())
+    },[dispatch])
+  
   const { toggleWishlist } = useContext(WishlistContext);
   const {toggleCart} =useContext(CartContext)
   return (
@@ -40,7 +32,7 @@ function BestProducts() {
         </Link>
       </div>
       <div className="BestProduct" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'20px'}} >
-          {data.map((data)=>(
+          {product.map((data)=>(
         <div key={data.id}>
           <div onClick={() => toggleWishlist(data)} className="img" style={{background:'#F5F5F5',width:'270px',height:'250px',display:'flex',justifyContent:'center',alignItems:'center'}}>
             <img  style={{objectFit:'contain'}} src={data.img_url} alt="" />

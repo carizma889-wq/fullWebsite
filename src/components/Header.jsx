@@ -6,11 +6,21 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import InputAdornment from '@mui/material/InputAdornment';
-
+import { useSelector,useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { checkUserSession } from "../features/logicProgramm.js";
 function Header({isSignUpOrLogIN,isUser}) {
-  
+  const user = useSelector(
+  state => state.signup.user
+);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(checkUserSession());
+    }, []);
+
   return (
-    <>
+ 
     <div style={{width:'100%',borderBottom:'1px solid black'}}>
       
     <nav className="navbar navbar-expand-lg " style={{display:'flex',justifyContent:'space-between',alignItems:'center',margin:'0 20px'}}>
@@ -25,7 +35,7 @@ function Header({isSignUpOrLogIN,isUser}) {
       <ul style={{margin:'0 auto',display:'flex',justifyContent:'center',alignItems:'center',listStyle:'none',gap:'50px',paddingTop:"10px"}} className="navbar-nav me-auto mb-2 mb-lg-0">
         {NAV_LINKS.map((data)=>{
          if (data) {
-         return <Link key={data} to={data==="Sign Up"?"/":`/${data}`} style={{border:'none',textDecoration:'none'}}>
+         return <Link key={data} to={data==="Home"?"/":`/${data}`} style={{border:'none',textDecoration:'none'}}>
             <li style={{letterSpacing:'0',color:"black",border:'none',textDecoration:'none'}} key={data}>{data}</li>
           </Link>
          }
@@ -40,21 +50,23 @@ function Header({isSignUpOrLogIN,isUser}) {
           </InputAdornment>
         ),
       }}/>
-        <Link to={'/Wishlist'}>
+        <Link to={user ? '/Wishlist':'/SignUp'}>
         <FavoriteBorderIcon   sx={{color:'black',marginBottom:'0px',cursor:'pointer',display:isSignUpOrLogIN==true?isUser==true?'':'':'block'}}/>
       </Link>
-      <Link to={'/Cart'}>
-        <LocalGroceryStoreOutlinedIcon sx={{color:'black',marginBottom:'0px',cursor:'pointer' ,display:isSignUpOrLogIN==true?'none':'block'}}/>
+      <Link to={user ? '/Cart':'/SignUp'}>
+        <LocalGroceryStoreOutlinedIcon  sx={{color:'black',marginBottom:'0px',cursor:'pointer' ,display:isSignUpOrLogIN==true?'none':'block'}}/>
       </Link>
       <Link to={'/User'}>
-        <PersonOutlineOutlinedIcon sx={{color:'black',marginBottom:'0px',cursor:'pointer',display:isSignUpOrLogIN==true?'none':'block'}}/>
+      {user ?(
+        <PersonOutlineOutlinedIcon  sx={{color:'black',marginBottom:'0px',cursor:'pointer',display:isSignUpOrLogIN==true?'none':'block'}}/>
+      ):null}
       </Link>
       </div>
       </div>
   </div>
 </nav>
     </div>
-    </>
+   
 )
 }
 

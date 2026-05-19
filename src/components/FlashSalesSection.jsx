@@ -1,28 +1,18 @@
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import {useRef , useEffect,useState } from "react";
-import supabase from '../../supabase'
+import {useRef , useEffect } from "react";
 import Products from './Products';
 import { Link } from 'react-router-dom';
-
+import { fetchApi } from "../features/ecommerceStore";
+import { useSelector,useDispatch } from "react-redux";
 
 function FlashSalesSection() {
-    const [data, setData]=useState([])
-    useEffect(()=>{
-        const fetchData=async()=>{
-            const { data, error } = await supabase
-    .from("PRODUCTS")
-    .select("*")
-    .eq("category", "PRODUCTS_CAROUSEL");
-    if (error) {
-        console.log(error);
-    } else {
-    console.log(data)
-    setData(data)
-    }
-        }
-        fetchData()
-    },[])
+    const product=useSelector((state)=>state.ecommerce.products)
+    const dispatch=useDispatch()
+        useEffect(()=>{
+        console.log('redux fetching')
+        dispatch(fetchApi())
+    },[dispatch])
     const prevRef = useRef(null);
     const nextRef = useRef(null);
   return (
@@ -60,7 +50,7 @@ function FlashSalesSection() {
         </div>
         {/* end  */}
         <div className="products">
-            <Products   PRODUCTS_CAROUSEL={data} nextRef={nextRef} prevRef={prevRef} />
+            <Products   PRODUCTS_CAROUSEL={product} nextRef={nextRef} prevRef={prevRef} />
         </div>
        <div className="btns">
         <Link to={'/ShowAll'}>

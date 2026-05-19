@@ -11,25 +11,19 @@ import StarIcon from '@mui/icons-material/Star';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { Link } from "react-router-dom";
-import supabase from '../../supabase'
-
+import { fetchApi } from "../features/ecommerceStore";
+import { useSelector,useDispatch } from "react-redux";
 function OurProduct() {
-    const [data,SetData]=useState([])
-    useEffect(()=>{
-        const fetchData=async()=>{
-            const { data, error } = await supabase
-    .from("PRODUCTS")
-    .select("*")
-    .eq("category", "OurProducts");
-    if (error) {
-        console.log(error);
-    } else {
-    SetData(data)
-    }
-        }
-        fetchData()
-    },[])
-    const [activeColors,SetActiveColors]=useState({})
+        const [activeColors,SetActiveColors]=useState({})
+
+      const product=useSelector((state)=>state.ecommerce.products)
+    const dispatch=useDispatch()
+        useEffect(()=>{
+        console.log('redux fetching')
+        dispatch(fetchApi())
+    },[dispatch])
+
+   
     const prevRef = useRef(null);
     
     const nextRef = useRef(null);
@@ -68,7 +62,7 @@ return (
         1024:  {slidesPerView: 4},
         }}
         >
-        {data.map((d) => {
+        {product.map((d) => {
             const activeIndex=activeColors[d.id]??0;
             return  <SwiperSlide  key={d.id}>
             <div className="img" style={{background:'#F5F5F5',width:'270px',height:'250px',display:'flex',justifyContent:'center',alignItems:'center'}}>

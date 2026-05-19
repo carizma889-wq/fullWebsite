@@ -1,6 +1,15 @@
 import { Container } from "@mui/material"
 import Header from '../components/Header'
+import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logOutUser } from "../features/logicProgramm";
 function User() {
+    const user = useSelector(
+  state => state.signup.user
+);
+const navigate = useNavigate();
+const dispatch = useDispatch();
   const lists=[
     {Manage:['My Profile','Address Book','My Payment Options']},
     {MyOrders:['My Returns','My Cancellations']},
@@ -22,7 +31,7 @@ function User() {
       <div className="section" style={{margin:'100px 0'}} >
           <div className="link" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
             <p style={{color:'#0000008a'}}>Home / <span style={{color:'black'}}>My Account</span></p>
-            <p>welcome! <span style={{color:'#DB4444'}}>Md Rimel</span></p>
+            <p>welcome! <span style={{color:'#DB4444'}}>{user?.user_metadata?.name}</span></p>
           </div>
         <div className="content" style={{marginTop:'70px',display:'flex',justifyContent:'space-between',alignItems:'start'}}>
           <div className="lists">
@@ -49,10 +58,10 @@ function User() {
           <div className="fullName" style={{display:'flex',flexDirection:'row',justifyContent:'space-between',gap:'50px'}}>
             <div className="firstName" style={{display:'flex',flexDirection:'column',marginBottom:'20px'}}>
               <label htmlFor="first" style={{fontSize:'13px',marginBottom:'8px'}}>First Name</label>
-              <input id="first" type="text" placeholder="Md" style={{borderRadius:'5px',paddingLeft:'10px',background:'#F5F5F5',outline:'none',border:'none',width:'330px',height:'50px'}} />
+              <input id="first" type="text" placeholder={user?.user_metadata?.name} style={{borderRadius:'5px',paddingLeft:'10px',background:'#F5F5F5',outline:'none',border:'none',width:'330px',height:'50px'}} />
             </div>
             <div className="LastName" style={{display:'flex',flexDirection:'column'}}>
-              <label htmlFor="Last" style={{fontSize:'13px',marginBottom:'8px'}}>Last Name</label>
+              <label htmlFor="Last" style={{fontSize:'13px',marginBottom:'8px'}}>...</label>
               <input id="Last" type="text" placeholder="Rimel" style={{borderRadius:'5px',paddingLeft:'10px',background:'#F5F5F5',outline:'none',border:'none',width:'330px',height:'50px'}} />
             </div>
           </div>
@@ -75,6 +84,10 @@ function User() {
             <div className="save" style={{display:'flex',justifyContent:'end',marginTop:'20px',gap:'32px',alignItems:'center'}}>
               <button style={{border:'none',color:'black',background:'none',cursor:'pointer',width:'57px',height:'24px',fontSize:'16px'}}>Cancel</button>
               <button style={{width:'214px',height:'56px',background:'#DB4444',color:'white',padding:'16p 48px',border:'none'}}>Save Changes</button>
+              <button onClick={()=>{
+                dispatch(logOutUser())
+                navigate("/SignUp")
+              }} style={{width:'214px',height:'56px',background:'#DB4444',color:'white',padding:'16p 48px',border:'none'}}>logOut</button>
             </div>
         </div>
         </div>

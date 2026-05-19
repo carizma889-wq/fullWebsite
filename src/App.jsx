@@ -17,12 +17,11 @@ import './App.css'
 function App() {
   
   return (
-    <>
     <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index  element={<SignUp/>}/>   
+          <Route path="SignUp"   element={<SignUp/>}/>   
           <Route path="/LogIn" element={<LogIn/>}/>   
-          <Route path="/Home" element={<HomePage />} />  
+          <Route index element={<HomePage />} />  
           <Route path="/About" element={<About/>}/>   
           <Route path="/showAll" element={<ShowAll/>}/>
           <Route path="/Content" element={<Contact/>}/>   
@@ -30,12 +29,11 @@ function App() {
           <Route path="/Account" element={<Account/>}/>   
           <Route path="/CheckOut" element={<CheckOut/>}/>   
           <Route path="*" element={<NotFound/>}/>   
-          <Route path="/ProductDetails" element={<ProductDetails/>}/>   
+          <Route path="/ProductDetails/:id" element={<ProductDetails/>}/>   
           <Route path="/Wishlist" element={<Wishlist/>}/>   
           <Route path='/User' element={<User/>}/>
         </Route>
       </Routes>
-    </>
   )
 }
 

@@ -4,10 +4,29 @@ import Button from '@mui/material/Button';
 import { useState } from "react";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { loginUser } from '../features/logicProgramm';
+import { useSelector,useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 function LogIn() {
+    const dispatch = useDispatch();
+  const navigate = useNavigate();
+const user = useSelector(
+    (state) => state.ecommerce
+  );
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+  });
       const [showPassword, setShowPassword] = useState(false);
-
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    const result = await dispatch(loginUser({...inputs}));
+    // لو نجح login
+    if (result.meta.requestStatus === "fulfilled") {
+      navigate("/");
+    }
+  }
   return (
       <div>
       <Header isSignUpOrLogIN={false}/>
@@ -36,7 +55,7 @@ function LogIn() {
       }}
     />
                 <div style={{display:'flex',justifyContent:'space-between'}}>
-                  <Button id="btn"  variant="contained">Log In</Button>
+                  <Button id="btn"  variant="contained" onClick={handleSubmit }>Log In</Button>
                   <Button id="forget" variant="contained"> Forget Password?</Button>
                 </div>
           </form>
@@ -44,6 +63,7 @@ function LogIn() {
       </div>
     </div>
   )
+   
 }
 
 export default LogIn

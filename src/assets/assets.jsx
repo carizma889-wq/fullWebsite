@@ -38,7 +38,7 @@ import perfume from '/img/perfume.png'
 import woman from '/img/woman.png'
 import speakers from '/img/speakers.png'
 
-export const NAV_LINKS =[ 'Home','Content','About','Sign Up']
+export const NAV_LINKS =[ 'Home','Content','About','SignUp']
 
 export const SIDEBAR_LINKS=[
     {id:uuid(),title:'Woman’s Fashion',isCollapse:true},

@@ -81,6 +81,7 @@
   }
 
   .item {
+    
   /**/  .BoxImg {
         position: relative;
         display: flex;
@@ -123,6 +124,7 @@
       }
 
      /**/   .price {
+      color: $primary_color !important;
         span {
 
         //   &:first-child {

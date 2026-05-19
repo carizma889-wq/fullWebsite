@@ -6,7 +6,10 @@ import StarIcon from '@mui/icons-material/Star';
 import { FreeMode } from 'swiper/modules';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
-function Products({PRODUCTS_CAROUSEL,prevRef,nextRef,dispatch}) {
+import { Link } from 'react-router-dom'
+
+
+function Products({PRODUCTS_CAROUSEL,prevRef,nextRef}) {
  return (
 
       <Swiper
@@ -40,10 +43,14 @@ onSwiper={(swiper) => {
         className="mySwiper myProducts"
       >
        {PRODUCTS_CAROUSEL.map((data)=>(
-        <SwiperSlide className='item' key={data.id} >
+         <SwiperSlide key={data.id} className='item'  >
+           <Link style={{textDecoration:'none',color:"#DB4444"}}  to={`/ProductDetails/${data.id}`}>
+           
             <div  className="BoxImg" >
                 <img className='img' src={`${data.img_url}`} alt="" />
-                <button className='btnHide' onClick={()=>{handleClicked(data.id)}} > add to card</button>
+                
+                <button className='btnHide'  > add to card</button>
+                
             </div>
             <div className="details">
               <p>{data.details}</p>
@@ -51,11 +58,11 @@ onSwiper={(swiper) => {
                 <span>${data.salaryOffer}</span> <span>${data.salary}</span>
 
                <div className="stars">
-                 {Array.from({length:data.startNumberYellow}).map((index)=>{
-                  return <StarIcon key={index} sx={{color:'#FFAD33'}}/>
+                {Array.from({ length: data.startNumberYellow }).map((_, index) => {
+                  return <StarIcon key={index} sx={{ color: '#FFAD33' }} />
                 })}
                 {Array.from({length:data.startNumberempty}).map(()=>{
-                  return <StarOutlineIcon/>
+                  return <StarOutlineIcon sx={{color:'#FFAD33'}}/>
                 })}
                 {Array.from({length:data.numberStarmaybe}).map(()=>{
                   return <StarHalfIcon sx={{color:'#FFAD33'}}/>
@@ -63,14 +70,12 @@ onSwiper={(swiper) => {
                </div>
               </div>
             </div>
+            </Link>
         </SwiperSlide>
        ))}
       </Swiper>
   );
-  function handleClicked(id){
-  dispatch()
-window.alert("hello"+id)
-}
+  
 }
 
 
