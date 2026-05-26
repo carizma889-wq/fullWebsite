@@ -3,15 +3,14 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import {useRef , useEffect } from "react";
 import Products from './Products';
 import { Link } from 'react-router-dom';
-import { fetchApi } from "../features/ecommerceStore";
+import { fetchApi_Products_Carousel } from "../features/ecommerceStore";
 import { useSelector,useDispatch } from "react-redux";
 
 function FlashSalesSection() {
     const product=useSelector((state)=>state.ecommerce.products)
     const dispatch=useDispatch()
         useEffect(()=>{
-        console.log('redux fetching')
-        dispatch(fetchApi())
+        dispatch(fetchApi_Products_Carousel())
     },[dispatch])
     const prevRef = useRef(null);
     const nextRef = useRef(null);

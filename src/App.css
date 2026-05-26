@@ -773,6 +773,9 @@
 .myProducts .item .details {
   /**/
 }
+.myProducts .item .details .price {
+  color: #DB4444 !important;
+}
 .myProducts .item .details .price span {
   /**/
 }
@@ -1022,7 +1025,29 @@
 }
 
 .BestProductsSection {
+  overflow: hidden;
   margin: 100px 0;
+}
+.BestProductsSection .img {
+  overflow: hidden;
+}
+.BestProductsSection .img .btnHide {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 41px;
+  width: 100%;
+  background: black;
+  color: white;
+  border: none;
+  z-index: 10;
+  cursor: pointer;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.BestProductsSection .img:hover .btnHide {
+  transform: translateY(0);
 }
 
 .header {
@@ -1054,6 +1079,35 @@
   background-color: #DB4444;
   color: white;
   border: none;
+}
+
+.ourProduct {
+  overflow: hidden;
+}
+.ourProduct .slide {
+  overflow: hidden;
+}
+.ourProduct .slide .img {
+  overflow: hidden;
+  position: relative;
+}
+.ourProduct .slide .img .btnHide {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 41px;
+  width: 100%;
+  background: black;
+  color: white;
+  border: none;
+  z-index: 10;
+  cursor: pointer;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.ourProduct .slide .img:hover .btnHide {
+  transform: translateY(0);
 }
 
 .Featured {

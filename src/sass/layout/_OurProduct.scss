@@ -1,0 +1,30 @@
+.ourProduct{
+    overflow: hidden;
+    .slide{
+        overflow: hidden;
+            .img{
+            overflow: hidden;
+            position: relative;
+            .btnHide {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            height: 41px;
+            width: 100%;
+            background: black;
+            color: white;
+            border: none;
+            z-index: 10;
+            cursor: pointer;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: 0.3s;
+        } 
+         &:hover {
+           .btnHide {
+                transform: translateY(0);
+            }
+        }
+    }
+    }
+}

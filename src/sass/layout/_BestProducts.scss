@@ -3,7 +3,32 @@
 
 
 .BestProductsSection {
+    overflow: hidden;
     margin: 100px 0;
+    .img{
+            overflow: hidden;
+
+            .btnHide {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 41px;
+            width: 100%;
+            background: black;
+            color: white;
+            border: none;
+            z-index: 10;
+            cursor: pointer;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: 0.3s;
+        } 
+         &:hover {
+           .btnHide {
+                transform: translateY(0);
+            }
+        }
+    }
 }
 
 .header {

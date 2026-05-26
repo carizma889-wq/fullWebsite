@@ -1,22 +1,48 @@
+/* eslint-disable no-unused-vars */
 import Header  from '../components/Header'
-import { CartContext } from '../context/CartContext'
-import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Container } from '@mui/material'
 const titleList=['Product','Price','Quantity','Subtotal']
 import ListCart from '../components/ListCart'
-import CheckOut from './CheckOut'
+import { useEffect, useState } from "react"
+import supabase from '../../supabase'
 function Cart() {
-  const {Cart}=useContext(CartContext)
-  console.log(Cart)
-  const show=titleList.map((d,i)=>{
-    return (
-      <>
-      <li key={i}>{d}</li>
-      </>
-    )
+  const [cartItems,setCartItems]=useState([])
+  const [number,setNumber]=useState(1)
+  useEffect(()=>{
+    const getCart=async()=>{
+      const {data:{user}}=await supabase.auth.getUser()
+      if(!user){
+        return console.log("not found")
+      }
+      const {data,error}=await supabase.from("CART").select(`*,PRODUCTS (*)`).eq("user_id",user.id)
+      if(error){
+        console.log(error)
+      }else{ 
+        setCartItems(data)
+      }
+    }
+    getCart()
+  },[])
+  
+  console.log("cart",cartItems)
+
+  // 
+  
+  // const show=cartItems.map((item)=>{
+  //   return (
+  //     <>
+  //     <div key={item.id}>
+  //       <li><img width={40} src={item.PRODUCTS.img_url} alt="" /></li>
+  //       <li>{item.PRODUCTS.details}</li>
+  //       <li>{item.PRODUCTS.salary}</li>
+  //       <li><input type="number" value={number} onChange={(e)=>{setNumber(e.target.value==0?1:e.target.value)}}  /></li>
+  //       <li>{number* item.PRODUCTS.salary}</li>
+  //       </div>
+  //     </>
+  //   )
     
-  })
+  // })
 
   
   return (
@@ -29,11 +55,13 @@ function Cart() {
       <Link to={'/Cart'} className='LinkCart' ><span> Cart</span></Link>
     </div>
     <ul className='ListCart' style={{marginTop:'100px',listStyle:'none',display:'grid',gridTemplateColumns:'repeat(4,1fr)',textAlign:'center'}}>
-      {show}
+      {titleList.map((data)=>{
+        return <li key={data}>{data}</li>
+      })}
       
     </ul >
     <ul style={{display:'flex',listStyle:'none',flexDirection:'column',gap:'10px'}}>
-      {Cart.map((data)=>{
+      {cartItems.map((data)=>{
         return <ListCart  data={data} key={data.id}/>
       })}
     </ul>

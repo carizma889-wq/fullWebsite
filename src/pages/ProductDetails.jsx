@@ -1,20 +1,27 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-
+import { useSelector,useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { fetchProductById } from '../features/ecommerceStore'
 function ProductDetails() {
-    const { id } = useParams()
-      const products=useSelector((state)=>state.ecommerce.products)
+     const dispatch = useDispatch()
+  const { id } = useParams()
+  const product = useSelector((state) => state.ecommerce.selectedProduct)
+  console.log("id من الـ URL:", id)
+  console.log("product:", product)
 
-  const product = products.find((item) => item.id === Number(id))
-    if (!product) return <div>Loading...</div>
+  useEffect(() => {
+    dispatch(fetchProductById(id))
+  }, [id])
+
+  if (!product) return <div>Loading...</div>
 
   return (
     <div>
       <div className="ProductDetails">
       <img src={product.img_url} alt={product.details} />
       <h2>{product.details}</h2>
-      <p>السعر: ${product.salaryOffer}</p>
+      <p>السعر: ${product.salaryOffer||product.salary}</p>
     </div>
     </div> 
   )

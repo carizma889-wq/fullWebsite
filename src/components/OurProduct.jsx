@@ -11,25 +11,44 @@ import StarIcon from '@mui/icons-material/Star';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import { Link } from "react-router-dom";
-import { fetchApi } from "../features/ecommerceStore";
+import { fetchApi_OurProducts,addToCart,addToLike } from "../features/ecommerceStore";
 import { useSelector,useDispatch } from "react-redux";
-function OurProduct() {
-        const [activeColors,SetActiveColors]=useState({})
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-      const product=useSelector((state)=>state.ecommerce.products)
+function OurProduct() {
+            const [activeColors, setActiveColors] = useState({})
+
+
+      const product=useSelector((state)=>state.ecommerce.OurProducts)
+      console.log(product)
     const dispatch=useDispatch()
         useEffect(()=>{
         console.log('redux fetching')
-        dispatch(fetchApi())
+        dispatch(fetchApi_OurProducts())
     },[dispatch])
 
-   
+    const handleAddToCart = async (product) => {
+    dispatch(addToCart(product))
+
+}
+function handleAddToLike(product){
+  dispatch(addToLike(product))
+}
     const prevRef = useRef(null);
     
     const nextRef = useRef(null);
+
+const handleColor = (productId, index) => {
+  setActiveColors(prev => ({
+    ...prev,
+    [productId]: index 
+  }))
+}
+
     
 return (
-    <div className="" >
+    <div className="ourProduct" >
         <div className="header">
             <div className="detailsHeader">
                 <p style={{marginBottom:'20px'}}>Our Products</p>
@@ -62,11 +81,17 @@ return (
         1024:  {slidesPerView: 4},
         }}
         >
-        {product.map((d) => {
-            const activeIndex=activeColors[d.id]??0;
-            return  <SwiperSlide  key={d.id}>
+        {product.map((d,productIndex) => {
+              const uniqueKey = `${d.id}-${productIndex}` 
+                const activeIndex = activeColors[uniqueKey] ?? 0
+            return  <SwiperSlide className="slide"  key={uniqueKey}>
             <div className="img" style={{background:'#F5F5F5',width:'270px',height:'250px',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                <div onClick={()=>{handleAddToLike(d)}}> <FavoriteBorderIcon o  style={{cursor:'pointer',color:'black',position:'absolute',top:'30px',right:'25px',zIndex:'11111111111'}}/></div>
+            <div><VisibilityOutlinedIcon  style={{color:'black',position:'absolute',top:'70px',right:'25px',cursor:'pointer',zIndex:'111111111111'}}  /></div>          
+                <Link style={{textDecoration:'none',color:"#DB4444"}}  to={`/ProductDetails/${d.id}`}>
                 <img style={{objectFit:'contain'}} src={d.img_url} alt="" />
+                </Link>
+                <button className='btnHide' onClick={()=>{handleAddToCart(d)}}  > add to cart</button>
             </div>
             <div className="details">
                 <p>{d.details}</p>
@@ -87,9 +112,20 @@ return (
                 <p style={{color:'#00000093'}}>({d.evaluation})</p>
             </div>
             <div className="colors" style={{display:'flex',gap:'20px',padding:'5px'}}>
-                
-                {d.color?.map((c,index)=>(
-                    <p  style={{width:'20px',height:'20px',background:c=="primary"?'#DB4444':c,borderRadius:'50%',outline:activeIndex?'1px solid black':'none',outlineOffset:'3px'}} className={activeIndex===index?'active':'none'} onClick={()=>{handle(d.id,index)}} ></p>
+                {d.colors.map((c, index) => (
+                <div
+                    key={index}
+                    onClick={() => handleColor(uniqueKey, index)}
+                    style={{
+                    width: '20px',
+                    height: '20px',
+                    background: c === "primary" ? '#DB4444' : c,
+                    borderRadius: '50%',
+                    outline: activeIndex === index ? '1px solid black' : 'none',
+                    outlineOffset: '3px',
+                    cursor: 'pointer'
+                    }}
+                ></div>
                 ))}
             </div>
           </SwiperSlide>
@@ -103,12 +139,8 @@ return (
     </div>
     
 )
-function handle(productId,index){
-        SetActiveColors(prev=>({
-            ...prev,
-            [productId]:index
-        }))
-    }
+
+    
 }
 
 export default OurProduct
