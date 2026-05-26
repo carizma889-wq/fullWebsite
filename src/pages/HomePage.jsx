@@ -1,6 +1,4 @@
 import Header from '../components/Header'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import HeroSection from '../components/HeroSection';
 import Container from '@mui/material/Container';
 import FlashSalesSection from '../components/FlashSalesSection';
@@ -9,8 +7,6 @@ import BestProducts from '../components/BestProducts';
 import Categories from '../components/Categories';
 import OurProduct from '../components/OurProduct';
 import Featured from '../components/Featured';
-
-//FlashSalesSection , BestProducts , ,OurProduct
 function HomePage() {
 
   return (

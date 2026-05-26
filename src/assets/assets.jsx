@@ -37,6 +37,8 @@ import playStation5 from '/img/playStation5.png'
 import perfume from '/img/perfume.png'
 import woman from '/img/woman.png'
 import speakers from '/img/speakers.png'
+import Frame from '/img/Frame.png'
+
 
 export const NAV_LINKS =[ 'Home','Content','About','SignUp']
 
@@ -50,6 +52,49 @@ export const SIDEBAR_LINKS=[
     {id:uuid(),title:'Baby’s & Toys',isCollapse:false},
     {id:uuid(),title:'Groceries & Pets',isCollapse:false},
     {id:uuid(),title:'Health & Beauty',isCollapse:false},
+]
+
+export const dataCarousel=[
+    {
+    id: uuid(),
+    icon: '/img/iconIphone.png',
+    brand: 'iPhone 14 Series',
+    title: 'Up to 10% off Voucher',
+    img: Frame,
+    imgAlt: 'iPhone 14 promotional image',
+  },
+      {
+    id: uuid(),
+    icon: '/img/iconIphone.png',
+    brand: 'iPhone 14 Series',
+    title: 'Up to 10% off Voucher',
+    img: Frame,
+    imgAlt: 'iPhone 14 promotional image',
+  },
+      {
+    id: uuid(),
+    icon: '/img/iconIphone.png',
+    brand: 'iPhone 14 Series',
+    title: 'Up to 10% off Voucher',
+    img: Frame,
+    imgAlt: 'iPhone 14 promotional image',
+  },
+      {
+    id: uuid(),
+    icon: '/img/iconIphone.png',
+    brand: 'iPhone 14 Series',
+    title: 'Up to 10% off Voucher',
+    img: Frame,
+    imgAlt: 'iPhone 14 promotional image',
+  },
+      {
+    id: uuid(),
+    icon: '/img/iconIphone.png',
+    brand: 'iPhone 14 Series',
+    title: 'Up to 10% off Voucher',
+    img: Frame,
+    imgAlt: 'iPhone 14 promotional image',
+  },
 ]
 
 export const CATEGORIES=[

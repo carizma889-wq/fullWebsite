@@ -611,7 +611,7 @@
 }
 
 .swiper-pagination-bullet {
-  background: gray; /* النقط العادية */
+  background: gray;
   opacity: 1;
   padding: 5px;
 }
@@ -639,6 +639,50 @@
   height: 1px;
   top: 10px;
   z-index: -111111111111;
+}
+
+.mySwiper .carouselSlide {
+  background-color: black;
+}
+.mySwiper .carouselSlide .carouselContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+.mySwiper .carouselSlide .carouselContent .carouselTextAndButton {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: center;
+}
+.mySwiper .carouselSlide .carouselContent .carouselTextAndButton .carouselBrand {
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+}
+.mySwiper .carouselSlide .carouselContent .carouselTextAndButton .carouselBrand img {
+  font-size: 18px;
+}
+.mySwiper .carouselSlide .carouselContent .carouselTextAndButton .carouselBrand span {
+  font-size: 15px;
+}
+.mySwiper .carouselSlide .carouselContent .carouselTextAndButton .carouselTitle {
+  width: 240px;
+  text-align: start;
+}
+.mySwiper .carouselSlide .carouselContent .carouselTextAndButton .ShopNow {
+  cursor: pointer;
+  border-bottom: 1px solid white;
+}
+.mySwiper .carouselSlide .carouselContent .carouselTextAndButton .ShopNow p {
+  display: inline;
+}
+.mySwiper .carouselSlide .carouselContent .carouselTextAndButton .ShopNow span {
+  margin-left: 5px;
 }
 
 .FlashSalesSection {
@@ -718,9 +762,6 @@
 .myProducts .mySwiper {
   margin-left: 140px;
 }
-.myProducts .item {
-  /**/
-}
 .myProducts .item .BoxImg {
   position: relative;
   display: flex;
@@ -730,14 +771,10 @@
   background: #F5F5F5;
   width: 100%;
   height: 250px;
-  /**/
 }
 .myProducts .item .BoxImg .img {
   text-decoration: line-through;
   pointer-events: none;
-}
-.myProducts .item .BoxImg {
-  /**/
 }
 .myProducts .item .BoxImg .btnHide {
   position: absolute;
@@ -754,38 +791,20 @@
   transform: translateY(100%);
   transition: 0.3s;
 }
-.myProducts .item .BoxImg {
-  /**/
-}
-.myProducts .item .BoxImg:hover {
-  /**/
-}
 .myProducts .item .BoxImg:hover .btnHide {
   transform: translateY(0);
-}
-.myProducts .item {
-  /**/
 }
 .myProducts .item .details p {
   color: black;
   margin-top: 10px;
 }
-.myProducts .item .details {
-  /**/
-}
 .myProducts .item .details .price {
   color: #DB4444 !important;
-}
-.myProducts .item .details .price span {
-  /**/
 }
 .myProducts .item .details .price span:last-child {
   margin-left: 10px;
   text-decoration: line-through;
   color: #333;
-}
-.myProducts .item .details .price {
-  /**/
 }
 .myProducts .item .details .price .stars {
   display: flex;
