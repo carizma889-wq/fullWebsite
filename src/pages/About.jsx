@@ -1,24 +1,30 @@
 import Header from '../components/Header'
 import Container from '@mui/material/Container';
-
 import { Link } from 'react-router-dom'
 import { Property ,detailsPeopleAbout,propertyAbout} from '../assets/assets.jsx'
 function About() {
   const show=Property.map((data)=>(
+    data.details==='Mopnthly Produduct Sale'?
+    <div key={data.id} style={{width:'270px',height:'230px',border:'none',display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',textAlign:'center',background:'#DB4444'}} >
+          <div  ><img src={data.img} alt={data.details}  /></div>
+          <h4 style={{color:'white'}} >{data.number}</h4>
+          <p  style={{color:'white'}}>{data.details}</p>
+        </div>
+    :
     <div key={data.id} className="item" >
-          <div className='img' ><img  src={data.img} alt="" /></div>
+          <div className='img' ><img  src={data.img} alt={data.details}/></div>
           <h4 >{data.number}</h4>
           <p >{data.details}</p>
         </div>
   ))
   const showDetailsPeopleAbout=detailsPeopleAbout.map((data)=>{
     return <div key={data.id}>
-      <div className="img" ><img src={data.img} alt={data.img} /></div>
+      <div className="img" ><img src={data.img} alt={data.name} /></div>
       <div >
         <h2 >{data.name}</h2>
         <p>{data.details}</p>
-        {data.iconsSocial.map((d)=>{
-          return <span className='icon' >{d}</span>
+        {data.iconsSocial.map((icon)=>{
+          return <span className='icon' >{icon}</span>
         })}
       </div>
     </div>
@@ -37,7 +43,7 @@ function About() {
     
     <div className='mainAbout' >
        <div  className='Link' >
-         <Link to={'/Home'} className='LinkHome' ><span>Home  / </span> </Link>
+         <Link to={'/'} className='LinkHome' ><span>Home  / </span> </Link>
          <Link to={'/About'} className='LinkAbout' ><span> About</span></Link>
        </div>
 

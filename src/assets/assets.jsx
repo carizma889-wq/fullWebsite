@@ -10,9 +10,9 @@ import product19 from '/img/products19.png'
 import product20 from '/img/products20.png'
 import product21 from '/img/products21.png'
 import StorefrontIcon from '/img/iconMarket.png';
-import ShoppingBagIcon from '/img/paper-bag.png';
-import MonetizationOnIcon from '/img/coin.png';
-import money from '/img/money.png'
+import ShoppingBagIcon from '/img/bag.png';
+import MonetizationOnIcon from '/img/IconSalary.png';
+import money from '/img/salary.png'
 import man1 from '/img/man1.png'
 import woman2 from '/img/woman2.png'
 import man2 from '/img/man2.png'

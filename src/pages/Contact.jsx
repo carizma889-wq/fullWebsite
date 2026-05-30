@@ -25,7 +25,7 @@ function Contact() {
     <Header/>
     <div className='mainContact'>
        <div  className='Link' >
-         <Link to={'/Home'} className='LinkHome' ><span>Home  / </span> </Link>
+         <Link to={'/'} className='LinkHome' ><span>Home  / </span> </Link>
          <Link to={'/Content'} className='LinkContact' ><span> Contact</span></Link>
        </div>
       
@@ -38,9 +38,9 @@ function Contact() {
         {/*  */}
         <div className="messageMe">
           <div className="inputsContact">
-            <TextField id="filled-basic" label="Your Name" variant="filled" />
-            <TextField id="filled-basic" label="Your Email" variant="filled" />
-            <TextField id="filled-basic" label="Your Phone" variant="filled" />
+            <TextField id="contact-name"  label="Your Name" />
+            <TextField id="contact-email" label="Your Email" />
+            <TextField id="contact-phone" label="Your Phone" />
           </div>
            <TextareaAutosize
       aria-label="minimum height"

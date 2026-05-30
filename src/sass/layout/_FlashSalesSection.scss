@@ -3,30 +3,30 @@
 .FlashSalesSection{
     margin: 100px 0;
     .sectionName{
-        margin-left: 141px;
+      all: unset;
         .title{
-            margin-left:35px; 
-            position: relative;
-            color:$primary_color;
-              &::before{
+          margin-left: 35px;
+          position: relative;
+          color:$primary_color;
+            &::before{
             content: '';
             position: absolute;
             width: 20px;
             height: 40px;
             border-radius: 5px;
             bottom: -10px;
-
             left: -35px;
             background-color: $primary_color;
             color: $primary_color;
         }
         }
         .details{
+            all: unset;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            
             .NameAndNumbers{
+              all: unset;
             display: flex;
             justify-content: start;
             align-items: center;
@@ -37,6 +37,7 @@
                 align-items: center;
                 gap: 20px;
                 text-align: center;
+                margin-bottom: 10px;
                 .days,.Hours,.Minutes,.Seconds{
                     display: flex;
                     font-size: 18px;
@@ -50,7 +51,6 @@
            
         }
          .arrows{
-                margin-right: 90px;
                 display: flex;
                 gap: 30px;
                 .arrow{
@@ -63,8 +63,8 @@
     .btns{
       display: flex;
       justify-content: center;
+      margin-top: 40px;
       .btn{
-        margin-top: 40px;
         @include btnGlobal($primary_color,16px  48px,white)
       }
     }
@@ -74,11 +74,7 @@
 .myProducts {
   width: 100%;
   height: 100%;
-  margin-left: 140px;
 
-  .mySwiper {
-    margin-left: 140px;
-  }
 
   .item {
     
@@ -91,9 +87,33 @@
         background: #F5F5F5;
         width: 100%;
         height: 250px;
-         .img {
+        .like{
+          .iconLike{
+            cursor: pointer;
+            color: black;
+            position: absolute;
+            top: 30px;
+            right: 25px;
+            z-index: 120;
+          }
+        }
+        .watch{
+          .iconWatch{
+            color: black;
+            position: absolute;
+            top: 70px;
+            right: 25px;
+            cursor: pointer;
+            z-index: 120;
+          }
+        }
+        .linkProduct{
+          text-decoration: none;
+          
+          .img {
             text-decoration: line-through;
             pointer-events: none;
+          }
         }
           .btnHide {
             position: absolute;
@@ -124,7 +144,7 @@
       }
 
       .price {
-      color: $primary_color !important;
+      color: $primary_color;
         span {
          &:last-child {
             margin-left: 10px;

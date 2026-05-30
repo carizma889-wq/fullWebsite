@@ -1,19 +1,52 @@
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import {useRef , useEffect } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { fetchApi_Products_Carousel } from "../features/ecommerceStore";
+import {useRef , useEffect,useState } from "react";
 import Products from './Products';
 import { Link } from 'react-router-dom';
-import { fetchApi_Products_Carousel } from "../features/ecommerceStore";
-import { useSelector,useDispatch } from "react-redux";
+
+const FLASH_SALE_END = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000) 
 
 function FlashSalesSection() {
-    const product=useSelector((state)=>state.ecommerce.products)
-    const dispatch=useDispatch()
-        useEffect(()=>{
-        dispatch(fetchApi_Products_Carousel())
-    },[dispatch])
+    //--- Refs ---
     const prevRef = useRef(null);
     const nextRef = useRef(null);
+
+    //--- Redux ---
+    const product=useSelector((state)=>state.ecommerce.products)
+    const dispatch=useDispatch()
+
+    //--- Countdown State ---
+    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+
+    
+    // --- Effects ---
+    useEffect(()=>{
+        dispatch(fetchApi_Products_Carousel())
+    },[dispatch])
+
+    useEffect(() => {
+            const timer = setInterval(() => {
+                const diff = FLASH_SALE_END - Date.now()
+                if (diff <= 0) return clearInterval(timer)
+                    
+                setTimeLeft({
+                    days:    Math.floor(diff / (1000 * 60 * 60 * 24)),
+                    hours:   Math.floor((diff / (1000 * 60 * 60)) % 24),
+                    minutes: Math.floor((diff / (1000 * 60)) % 60),
+                    seconds: Math.floor((diff / 1000) % 60),
+                })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
+  const showTime=[
+                { label: 'Days',    value: timeLeft.days,className:'days' },
+                { label: 'Hours',   value: timeLeft.hours ,className:'Hours' },
+                { label: 'Minutes', value: timeLeft.minutes ,className:'Minutes' },
+                { label: 'Seconds', value: timeLeft.seconds, className:'Seconds' },
+            ]
   return (
     <div className="FlashSalesSection" >
         <div className="sectionName">
@@ -22,22 +55,14 @@ function FlashSalesSection() {
                 <div className="NameAndNumbers">
                     <h1 className="name">Flash Sales</h1>
                     <div className="numbers">
-                        <div className="days">
-                            <span>Days</span>
-                            <span className="number">03</span>
-                        </div>
-                        <div className="Hours">
-                            <span>Hours</span>
-                            <span className="number">23</span>
-                        </div>
-                        <div className="Minutes">
-                            <span>Minutes</span>
-                            <span className="number">19</span>
-                        </div>
-                        <div className="Seconds">
-                            <span>Seconds</span>
-                            <span className="number">56</span>
-                        </div>
+                        {showTime.map(({ label, value,className }) => (
+                <div key={label} className={className}>
+                  <span>{label}</span>
+                  <span className="number">
+                    {String(value).padStart(2, '0')}
+                  </span>
+                </div>
+              ))}
                     </div>
                 </div>
                 {/* end name  */}

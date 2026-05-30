@@ -90,20 +90,46 @@ import supabase from '../../supabase'
     }
 
   })
-  export const getLikes=createAsyncThunk("myThunkFunctionLikes",async()=>{
+  export const fetchWishlistItems =createAsyncThunk("wishlist/fetchItems",async()=>{
           const {data:{user}}=await supabase.auth.getUser()
           if(!user){
-            return console.log("not found")
+            return []
           }
           const {data,error}=await supabase.from("likes").select(`*,PRODUCTS (*)`).eq("user_id",user.id)
           if(error){
-            console.log(error)
+            return []
           }else{
             return data
           }
     
   })
+  export const deleteWishlistItems=createAsyncThunk('wishlist/deleteItem',async(itemId)=>{
+    const {error}=await supabase
+    .from("likes")
+    .delete()
+    .eq('id',itemId)
 
+    if(error)return null
+    return itemId
+  })
+
+  export const fetchJustForYou=createAsyncThunk('wishlist/fetchJustForYou',async()=>{
+    const {data:{user}}=await supabase.auth.getUser()
+    if(!user)return[]
+    const {data: likedProducts }=await supabase.from("likes").select('PRODUCTS(category)').eq('user_id',user.id)
+    if(!likedProducts||likedProducts.length===0)return []
+    const categories=[
+      ...new Set(likedProducts.map((item)=>item.PRODUCTS.category))
+    ]
+        const { data, error } = await supabase
+      .from('PRODUCTS')
+      .select('*')
+      .in('category', categories)
+      .limit(8)
+
+    if (error) return []
+    return data
+  })
 
  const ecommerceStore = createSlice({
   name: "EcommerceStore",
@@ -117,7 +143,8 @@ import supabase from '../../supabase'
     showAll:[],
       cartItems: [],
     loading:false,
-    likes:[]
+    wishlistItem:[],
+    justForYou: [],
   },
 
   reducers: {
@@ -142,14 +169,28 @@ import supabase from '../../supabase'
   state.cartItems.push(action.payload) 
 })
 .addCase(addToLike.fulfilled,(state,action)=>{
-  state.likes.push(action.payload)
+  state.wishlistItem.push(action.payload)
 })
 .addCase(fetchProductById.fulfilled, (state, action) => {
   state.selectedProduct = action.payload
 })
+
+.addCase(fetchWishlistItems.fulfilled, (state, action) => {
+  state.wishlistItems = action.payload
+})
+.addCase(deleteWishlistItems.fulfilled, (state, action) => {
+  if (action.payload) {
+    state.wishlistItems = state.wishlistItems.filter(
+      (item) => item.id !== action.payload
+    )
   }
-  
-});
+})
+.addCase(fetchJustForYou.fulfilled, (state, action) => {
+  state.justForYou = action.payload
+})
+
+
+}});
 
 export const { getTheData } = ecommerceStore.actions;
 

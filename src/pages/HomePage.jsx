@@ -14,9 +14,7 @@ function HomePage() {
       <Header />
       <Container fixed>
         <HeroSection/>
-      </Container>
         <FlashSalesSection/> 
-        <Container fixed>
           <Category/>
           <BestProducts/>
           <Categories/>
