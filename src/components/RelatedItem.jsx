@@ -7,30 +7,26 @@ import { useSelector,useDispatch } from "react-redux";
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarRating from "./StarRating";
-function BestProducts() {
-  const product=useSelector((state)=>state.ecommerce.BEST_SELLING_PRODUCTS)
-  const dispatch=useDispatch()
-  const handleAddToCart = async (product) => {
+function RelatedItem() {
+    const product=useSelector((state)=>state.ecommerce.BEST_SELLING_PRODUCTS)
+    const dispatch=useDispatch()
+    const handleAddToCart = async (product) => {
     dispatch(addToCart(product))
-
-}
+    }
 function handleAddToLike(product){
-  dispatch(addToLike(product))
+    dispatch(addToLike(product))
 }
-        useEffect(()=>{
+    useEffect(()=>{
         dispatch(fetchApi_Best_Selling_Products())
     },[dispatch])
 
+
   return (
-    <div className="BestProductsSection">
+      <div className="BestProductsSection">
       <div className="header">
-        <div className="detailsHeader">
-            <p style={{marginBottom:'20px'}}>This Month</p>
-            <h2>Best Selling Products</h2>
+        <div className="detailsHeader" style={{marginTop:'20px'}}>
+            <p style={{}}>Related Item</p>
         </div>
-        <Link style={{textDecoration:'none'}} to={'/showAll'}>
-        <button className="btnView">View All</button>
-        </Link>
       </div>
       <div className="BestProduct" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'20px'}} >
           {product.map((data)=>(
@@ -64,4 +60,4 @@ function handleAddToLike(product){
   )
 }
 
-export default BestProducts
+export default RelatedItem

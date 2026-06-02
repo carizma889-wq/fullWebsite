@@ -14,12 +14,13 @@ function Wishlist() {
 
 const dispatch=useDispatch()
 const wishlistItems=useSelector((state)=>state.ecommerce.wishlistItem);
+console.log(wishlistItems)
 const justForYou =useSelector((state)=>state.ecommerce.justForYou);
 
   // --- Effects ---
 useEffect(()=>{
-  dispatch(fetchWishlistItems())
   dispatch(fetchJustForYou())
+  dispatch(fetchWishlistItems())
 },[dispatch])
 
   // --- Handlers  ---
@@ -71,7 +72,7 @@ function getDiscountPercent(original, offer) {
                         <span style={{ position: 'absolute',top:'10px',left:'20px',background:'#00FF66',color:'white',height:'26px',width:'55px',textAlign:'center',borderRadius:'5px' }} className="badgeNew">New</span>
                       )}
                 <img  style={{objectFit:'contain'}} src={data.PRODUCTS.img_url} alt="" />
-                <p style={{cursor:'pointer',position:'absolute',bottom:'0',background:'black',color:'white',width:'100%',textAlign:'center',borderEndEndRadius:'5px',borderEndStartRadius:'5px',height:'31px'}}>Add To Cart</p>
+                <p style={{cursor:'pointer',position:'absolute',bottom:'0',background:'black',color:'white',width:'100%',textAlign:'center',borderEndEndRadius:'5px',borderEndStartRadius:'5px',height:'31px'}} onClick={()=>{handleAddToCart(data)}}>Add To Cart</p>
               </div>
               <div className="details">
                 <p style={{marginTop:'15px'}}>{data.PRODUCTS.details}</p>

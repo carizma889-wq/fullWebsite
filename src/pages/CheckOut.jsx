@@ -68,7 +68,7 @@ const [value, setValue] = useState("cash");
               <p style={{fontSize:'16px'}}>{data.title}</p> <p>{data.title==='Subtotal:'||data.title==='Total:'?Number(dataVisa[0].salary)+Number(dataVisa[1].salary):'Free'}</p>
             </li>
           })}
-          {/* /// */}
+        
 {detailsVisa.map((data) => {
   return (
     <li key={data.id} style={{display:'flex',justifyContent:'space-between',alignItems:'center',margin:'10px 0'}}>

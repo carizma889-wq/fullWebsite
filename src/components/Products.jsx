@@ -43,11 +43,12 @@ onSwiper={(swiper) => {
     }
   });
   }}
-        loop={products.length >= 4}
+        loop={products.length}
         loopAdditionalSlides={4}
         freeMode={true}
         modules={[FreeMode, Navigation]}
         className="mySwiper myProducts"
+        style={{marginLeft:'0'}}
       >
        {PRODUCTS_CAROUSEL.map((product)=>(
          <SwiperSlide key={product.id} className='item'  >

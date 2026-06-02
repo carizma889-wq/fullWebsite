@@ -10,6 +10,7 @@ function Cart() {
   const [cartItems,setCartItems]=useState([])
   const [number,setNumber]=useState(1)
   useEffect(()=>{
+
     const getCart=async()=>{
       const {data:{user}}=await supabase.auth.getUser()
       if(!user){
@@ -24,27 +25,7 @@ function Cart() {
     }
     getCart()
   },[])
-  
-  console.log("cart",cartItems)
-
-  // 
-  
-  // const show=cartItems.map((item)=>{
-  //   return (
-  //     <>
-  //     <div key={item.id}>
-  //       <li><img width={40} src={item.PRODUCTS.img_url} alt="" /></li>
-  //       <li>{item.PRODUCTS.details}</li>
-  //       <li>{item.PRODUCTS.salary}</li>
-  //       <li><input type="number" value={number} onChange={(e)=>{setNumber(e.target.value==0?1:e.target.value)}}  /></li>
-  //       <li>{number* item.PRODUCTS.salary}</li>
-  //       </div>
-  //     </>
-  //   )
     
-  // })
-
-  
   return (
   <>
   <Header/>
