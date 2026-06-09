@@ -1,10 +1,12 @@
 @use '../utils/variable' as *;
-.heroSection{
-    margin: 50px 0;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    .sidebar{
+
+.heroSection {
+  margin: 50px 0;
+  display: flex;
+  gap: 30px;
+  width: 100%;
+
+  .sidebar {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -12,25 +14,37 @@
     justify-content: center;
     width: 250px;
     list-style: none;
-     .sidebarContent{
-        cursor: pointer;
-        display: flex;
-        width: 180px;
-        gap :16px;
-        align-items: center;
-        position: relative;
-        justify-content: space-between;
-       span{
-            .arrowRight{
-                font-size: 15px;
+
+    .sidebarContent {
+      cursor: pointer;
+      display: flex;
+      width: 180px;
+      gap: 16px;
+      align-items: center;
+      position: relative;
+      justify-content: space-between;
+
+      span {
+        .arrowRight {
+          font-size: 15px;
         }
-       }
-   }
+      }
+    }
+  }
 }
+
+.carousel {
+  flex: 1;
+  min-width: 0;
+
+  .mySwiper {
+    width: 100%;
+    height: 344px;
+  }
 }
 
 .swiper-pagination-bullet {
-  background: gray; 
+  background: gray;
   opacity: 1;
   padding: 5px;
 }
@@ -38,67 +52,116 @@
 .swiper-pagination-bullet-active {
   background: $primary_color;
 }
-.carousel{
- flex: 1;
-     .mySwiper{
-        width: 892px;
-        height: 344px;
-    }
-}
-.text{
-    position: relative;
-}
-.text::after{
-content: '';
-background-color: white;
-width: 100%;
-height: 1px;
-top: 10px;
-z-index: -111111111111;
+
+.mySwiper {
+  width: 100%;
 }
 
-.mySwiper{
-    .carouselSlide{
-        background-color: black;
-        .carouselContent{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: white;
-            .carouselTextAndButton{
-                margin-left: 50px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: start;
-                text-align: center;
-                .carouselBrand{
-                    align-items: center;
-                    gap: 10px;
-                    display: flex;
-                    justify-content: center;
-                    img{
-                        font-size: 18px;
-                    }
-                    span{
-                        font-size: 15px;
-                    }
-                }
-                .carouselTitle{
-                    width: 240px;
-                    text-align: start;
-                }
-                .ShopNow{
-                    cursor: pointer;
-                    border-bottom: 1px solid white;
-                    p{
-                        display: inline;
-                    }
-                    span{
-                        margin-left: 5px;
-                    }
-                }
-            }
-        }
+.carouselSlide {
+  background-color: black;
+
+  .carouselContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    height: 100%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
     }
+
+    .carouselTextAndButton {
+      margin-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+
+      .carouselBrand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+          font-size: 15px;
+        }
+      }
+
+      .carouselTitle {
+        width: 240px;
+        text-align: start;
+      }
+
+      .ShopNow {
+        cursor: pointer;
+        border-bottom: 1px solid white;
+
+        p {
+          display: inline;
+        }
+
+        span {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+/* Hide Sidebar Under 990px */
+
+@media (max-width: 990px) {
+  .heroSection {
+    .sidebar {
+      display: none;
+    }
+  }
+
+  .mySwiper {
+    height: 300px;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .mySwiper {
+    height: 250px;
+  }
+
+  .carouselContent {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .carouselTextAndButton {
+    margin-left: 0 !important;
+    align-items: center !important;
+  }
+
+  .carouselTitle {
+    width: auto !important;
+    text-align: center !important;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 576px) {
+  .mySwiper {
+    height: 200px;
+  }
+
+  .carouselBrand {
+    font-size: 14px;
+  }
+
+  .carouselTitle {
+    font-size: 22px;
+  }
 }

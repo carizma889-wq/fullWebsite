@@ -32,7 +32,7 @@ function handleAddToLike(product){
         <button className="btnView">View All</button>
         </Link>
       </div>
-      <div className="BestProduct" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'20px'}} >
+      <div className="BestProduct" style={{overflow:'auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'20px'}} >
           {product.map((data)=>(
         <div key={data.id}>
           <div  className="img" style={{background:'#F5F5F5',width:'270px',height:'250px',display:'flex',justifyContent:'center',alignItems:'center',position:'relative'}}>

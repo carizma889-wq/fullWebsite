@@ -5,11 +5,11 @@ import { Property ,detailsPeopleAbout,propertyAbout} from '../assets/assets.jsx'
 function About() {
   const show=Property.map((data)=>(
     data.details==='Mopnthly Produduct Sale'?
-    <div key={data.id} style={{width:'270px',height:'230px',border:'none',display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',textAlign:'center',background:'#DB4444'}} >
-          <div  ><img src={data.img} alt={data.details}  /></div>
+    <div className="item highlight" key={data.id} style={{border:'none',display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',textAlign:'center',background:'#DB4444'}} >
+          <div  ><img src={data.img} style={{}} alt={data.details}  /></div>
           <h4 style={{color:'white'}} >{data.number}</h4>
           <p  style={{color:'white'}}>{data.details}</p>
-        </div>
+        </div> 
     :
     <div key={data.id} className="item" >
           <div className='img' ><img  src={data.img} alt={data.details}/></div>

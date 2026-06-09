@@ -1,146 +1,211 @@
 .Featured{
     display: flex;
-    gap: 30px;
-    align-items: center;
-    color: white;
-    position: relative;
-    
-    .PlayStation{
-        background-repeat: no-repeat;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    .content{
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        .PlayStation{
         width: 570px;
         height: 600px;
-        background-color: black;
-        position: relative;
         .details{
-            position: absolute;
-            bottom: 15px;
-            left:20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            height: 100%;
+            color: white;
+            margin-left: 30px;
+            width: 242px;
             h1{
                 font-size: 24px;
+                color: #FAFAFA;
             }
             p{
                 font-size: 14px;
-                width: 240px;
+                color: #FAFAFA;
             }
-            p:last-child{
+            .shop{
+                font-size: 16px;
                 text-decoration: underline;
                 cursor: pointer;
+                color: #FFFFFF;
             }
         }
     }
     .Women’sandOthers{
         width: 570px;
-        height: 600px;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
-         
-        justify-content: space-between;
-        position: relative;
+        justify-content: center;
+        flex-wrap: wrap;
         .Women’s{
-            background-repeat: no-repeat;
-            width: 570px;
-            background-color: black;
+            max-width: 100%;
             height: 284px;
-            position: relative;
-             .details{
-            position: absolute;
-            bottom: 15px;
-            left:20px;
-             h1{
-                font-size: 24px;
+            margin-bottom: 30px;
+            .details{
+                display: flex;
+                height: 100%;
+                justify-content: end;
+                flex-direction: column;
+                color: white;
+                margin-left:25px;
+                h1{
+                    font-size: 24px;
+                    color: #FAFAFA;
+                }
+                p{
+                    font-size: 14px;
+                    color: #FAFAFA;
+                }
+                .shop{
+                    font-size: 16px;
+                    text-decoration: underline;
+                    color: #FFFFFF;
+                }
             }
-            p{
-                font-size: 14px;
-                width: 240px;
-            }
-            p:last-child{
-                text-decoration: underline;
-                cursor: pointer;
-            }
-        }
         }
         .others{
+        display: flex;
+        max-width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .cards{
             display: flex;
-            position: relative;
+            gap: 30px;
             justify-content: space-between;
+            align-items: center;
             .Speakers{
-                background-repeat: no-repeat;
                 width: 270px;
-                background-color: black;
                 height: 284px;
-                position: relative;
-                 .details{
-            position: absolute;
-            bottom: 15px;
-            left:20px;
-             h1{
-                font-size: 24px;
-            }
-            p{
-                font-size: 14px;
-                width: 240px;
-            }
-            p:last-child{
-                text-decoration: underline;
-                cursor: pointer;
-            }
-        }
+                .details{
+                    display: flex;
+                    height: 100%;
+                    justify-content: end;
+                    flex-direction: column;
+                    color: white;
+                    margin-left: 25px;
+                    h1{
+                        font-size: 24px;
+                        color: #FAFAFA;
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+                    .shop{
+                    font-size: 16px;
+                    color: #FFFFFF;
+                    text-decoration: underline;
+                    }
+                }
             }
             .Perfume{
-                background-repeat: no-repeat;
                 width: 270px;
-                background-color: black;
                 height: 284px;
-                position: relative;
-                 .details{
-            position: absolute;
-            bottom: 15px;
-            left:20px;
-             h1{
-                font-size: 24px;
-            }
-            p{
-                font-size: 14px;
-                width: 240px;
-            }
-            p:last-child{
-                text-decoration: underline;
-                cursor: pointer;
+                .details{
+                    display: flex;
+                    height: 100%;
+                    justify-content: end;
+                    flex-direction: column;
+                    color: white;
+                    margin-left: 25px;
+                    h1{
+                        font-size: 24px;
+                        color: #FAFAFA;
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+                    .shop{
+                    font-size: 16px;
+                    color: #FFFFFF;
+                    text-decoration: underline;
+                    }
+                }
             }
         }
-            }
-        }
-    }
-}
-.Property{
-        flex-wrap: wrap;
-        margin: 100px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 100px;
-        margin-top: 30px;
-        margin-left: 50px;
-        .main{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
         }
     }
-
-
-
-    
-
-
-@media (max-width: 991.98px) {
+    }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1200px) {
+  .Featured {
+    .content {
+      flex-direction: column;
+      align-items: center;
+    }
 
+    .PlayStation,
+    .Women’sandOthers {
+      width: 100%;
+      max-width: 570px;
+    }
+  }
 }
+@media (max-width: 767px) {
+  .Featured .PlayStation {
+    height: 350px;
+  }
 
-@media (max-min: 575.98px) {
+  .Featured .Women’s {
+    height: 220px;
+  }
 
+  .Featured .others .content {
+    gap: 15px;
+  }
+
+  .Featured .Speakers,
+  .Featured .Perfume {
+    width: calc(50% - 8px);
+    height: 180px;
+  }
+
+  .Featured .details h1 {
+    font-size: 18px;
+  }
+
+  .Featured .details p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .Featured .PlayStation {
+    height: 280px;
+  }
+
+  .Featured .Women’s {
+    height: 180px;
+  }
+
+  .Featured .others .content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .Featured .Speakers,
+  .Featured .Perfume {
+    width: 100%;
+    height: 160px;
+  }
+
+  .Featured .details {
+    margin-left: 15px !important;
+  }
+
+  .Featured .details h1 {
+    font-size: 16px;
+  }
+
+  .Featured .details p {
+    font-size: 11px;
+  }
+
+  .Featured .shop {
+    font-size: 12px;
+  }
 }

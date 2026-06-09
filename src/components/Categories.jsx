@@ -1,9 +1,9 @@
 
 import sound from '/img/Sound.png'
 function Categories() {
-  return (
-    <div style={{position:'relative',margin:'100px 0',background:'#000000',color:'white'}}>
-        <div className="content" style={{display:'flex',justifyContent:'center',alignItems:'center',gap:'60px',flexWrap:'wrap',padding:'50px '}}>
+  return ( 
+    <div style={{}} className='sectionCategories'>
+        <div className="content" style={{display:'flex',justifyContent:'center',alignItems:'center',gap:'60px',flexWrap:'wrap',padding:'50px ',overflow:'hidden'}}>
             <div className="details"style={{display:'flex',flexDirection:'column',gap:'35px'}}>
             <p  style={{color:'#00FF66'}}>Categories</p>
                 <h1>Enhance Your <br /> Music Experience</h1>
@@ -16,7 +16,7 @@ function Categories() {
             <button className="btnBayNow" style={{borderRadius:'5px',padding:'16px 48px',background:'#00FF66',border:'none',width:'171px',color:'white'}}>Buy Now!</button>
             </div>
             <div className="img" style={{position:'relative'}}>
-                <div style={{position:'absolute',width:'450px',height:'450px',borderRadius:'50%',filter:'blur(120px)',background:'#D9D9D9',opacity:'0.3'}}></div>
+                <div style={{position:'absolute',width:'450px',height:'450px',borderRadius:'50%',filter:'blur(120px)',background:'#D9D9D9',opacity:'0.3'}} className='glow'></div>
                 <img style={{position:'relative',maxWidth:'100%'}} src={sound} alt="" />
             </div>
         </div>

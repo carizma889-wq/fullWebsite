@@ -4,7 +4,7 @@
     margin:100px 0;
     display:flex;
     align-items:center;
-    height: 100vh;
+    min-height: 100vh;
     .img{ 
         img{
             height:701px;
@@ -39,17 +39,29 @@
 
 
 
-@media (max-width: 991.98px) {
-.mainLogIn{
-    flex-wrap: wrap;
-    .img{ 
-        img{
-display: block;
-        }
-    }
-}
-}
+@media (max-width: 1024px) {
+  .mainLogIn {
+    flex-direction: column;
+    height: auto;
+  }
 
+  .img {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .logInAccount {
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+  }
+}
 @media (max-width: 767.98px) {
 .mainLogIn{
     
@@ -61,7 +73,7 @@ display: none;
 }
 }
 
-@media (max-min: 575.98px) {
+@media (max-width: 575.98px) {
 .mainLogIn{
     
     .img{ 
@@ -71,3 +83,5 @@ display: none;
     }
 }
 }
+
+

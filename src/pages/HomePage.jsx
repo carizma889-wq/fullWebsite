@@ -13,13 +13,13 @@ function HomePage() {
     <div >
       <Header />
       <Container fixed>
-        <HeroSection/>
-        <FlashSalesSection/> 
-          <Category/>
-          <BestProducts/>
-          <Categories/>
-          <OurProduct/>
-          <Featured/>
+        <HeroSection/>  {/*done*/}
+        <FlashSalesSection/>    {/*done*/}
+          <Category/> {/*done*/}
+          <BestProducts/>  {/*done*/}
+          <Categories/> {/*done*/}
+          <OurProduct/>  {/*done*/}
+          <Featured/>  {/*done*/}
         </Container>
     </div>
   )

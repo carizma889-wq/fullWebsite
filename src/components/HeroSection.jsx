@@ -4,7 +4,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 // import required modules
 import Carousel from "./Carousel"
 function HeroSection() {
-  
+   
   return (
     <div className="heroSection">
         <ul className="sidebar">

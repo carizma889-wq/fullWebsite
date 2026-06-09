@@ -33,22 +33,20 @@ return (
     1024: { slidesPerView: 4 },
   }}
 onSwiper={(swiper) => {
-    setTimeout(() => {
-    if (swiper.params.navigation) {
-      swiper.navigation.init();
-      swiper.navigation.update();
-      swiper.params.navigation.prevEl = prevRef.current;
-  swiper.params.navigation.nextEl = nextRef.current;
+  setTimeout(() => {
+    swiper.params.navigation.prevEl = prevRef.current;
+    swiper.params.navigation.nextEl = nextRef.current;
 
-    }
+    swiper.navigation.destroy();
+    swiper.navigation.init();
+    swiper.navigation.update();
   });
-  }}
-        loop={products.length}
+}}
+        loop={false}
         loopAdditionalSlides={4}
-        freeMode={true}
-        modules={[FreeMode, Navigation]}
+        freeMode={false}
+        modules={[ Navigation]}
         className="mySwiper myProducts"
-        style={{marginLeft:'0'}}
       >
        {PRODUCTS_CAROUSEL.map((product)=>(
          <SwiperSlide key={product.id} className='item'  >

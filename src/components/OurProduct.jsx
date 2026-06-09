@@ -21,10 +21,8 @@ function OurProduct() {
 
 
       const product=useSelector((state)=>state.ecommerce.OurProducts)
-      console.log(product)
     const dispatch=useDispatch()
         useEffect(()=>{
-        console.log('redux fetching')
         dispatch(fetchApi_OurProducts())
     },[dispatch])
 
@@ -75,17 +73,28 @@ return (
         swiper.params.navigation.nextEl = nextRef.current;
         }}
         breakpoints={{
-        0:     {slidesPerView: 1},
-        480:   {slidesPerView: 3},
-        768:   {slidesPerView: 4},
-        1024:  {slidesPerView: 4},
-        }}
+  0: {
+    slidesPerView: 1,
+  },
+  576: {
+    slidesPerView: 2,
+  },
+  768: {
+    slidesPerView: 2,
+  },
+  992: {
+    slidesPerView: 3,
+  },
+  1200: {
+    slidesPerView: 4,
+  },
+}}
         >
         {product.map((d,productIndex) => {
               const uniqueKey = `${d.id}-${productIndex}` 
                 const activeIndex = activeColors[uniqueKey] ?? 0
             return  <SwiperSlide className="slide"  key={uniqueKey}>
-            <div className="img" style={{background:'#F5F5F5',width:'270px',height:'250px',display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <div className="img" style={{background:'#F5F5F5',width:'100%',height:'250px',display:'flex',justifyContent:'center',alignItems:'center'}}>
                 <div onClick={()=>{handleAddToLike(d)}}> <FavoriteBorderIcon o  style={{cursor:'pointer',color:'black',position:'absolute',top:'30px',right:'25px',zIndex:'11111111111'}}/></div>
             <div><VisibilityOutlinedIcon  style={{color:'black',position:'absolute',top:'70px',right:'25px',cursor:'pointer',zIndex:'111111111111'}}  /></div>          
                 <Link style={{textDecoration:'none',color:"#DB4444"}}  to={`/ProductDetails/${d.id}`}>
@@ -139,8 +148,6 @@ return (
     </div>
     
 )
-
-    
 }
 
 export default OurProduct

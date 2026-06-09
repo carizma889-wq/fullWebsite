@@ -45,7 +45,6 @@ function FlashSalesSection() {
                 { label: 'Days',    value: timeLeft.days,className:'days' },
                 { label: 'Hours',   value: timeLeft.hours ,className:'Hours' },
                 { label: 'Minutes', value: timeLeft.minutes ,className:'Minutes' },
-                { label: 'Seconds', value: timeLeft.seconds, className:'Seconds' },
             ]
   return (
     <div className="FlashSalesSection" >

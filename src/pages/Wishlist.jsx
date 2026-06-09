@@ -13,8 +13,7 @@ function Wishlist() {
   // --- Redux ---
 
 const dispatch=useDispatch()
-const wishlistItems=useSelector((state)=>state.ecommerce.wishlistItem);
-console.log(wishlistItems)
+const wishlistItems = useSelector((state) => state.ecommerce.wishlistItems)
 const justForYou =useSelector((state)=>state.ecommerce.justForYou);
 
   // --- Effects ---

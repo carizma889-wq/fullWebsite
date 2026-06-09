@@ -143,7 +143,7 @@ import supabase from '../../supabase'
     showAll:[],
       cartItems: [],
     loading:false,
-    wishlistItem:[],
+    wishlistItems:[],
     justForYou: [],
   },
 
